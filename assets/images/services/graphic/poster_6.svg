@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="50%" stop-color="#1f2937" />
+      <stop offset="100%" stop-color="#030712" />
+    </linearGradient>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="50%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg6)" rx="24"/>
+  <circle cx="400" cy="350" r="260" fill="url(#goldGradient)" opacity="0.15"/>
+
+  <!-- Header Badge -->
+  <rect x="80" y="70" width="220" height="34" rx="17" fill="rgba(251,191,36,0.15)" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="190" y="93" fill="#fbbf24" font-family="'Inter', sans-serif" font-size="13" font-weight="700" text-anchor="middle" letter-spacing="2">TYPOGRAPHY POSTER</text>
+  <text x="720" y="93" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="13" font-weight="600" text-anchor="end">EDITORIAL ART</text>
+
+  <!-- Typography Art -->
+  <g transform="translate(100, 180)">
+    <text x="300" y="100" fill="#ffffff" font-family="'Outfit', sans-serif" font-size="80" font-weight="900" text-anchor="middle" letter-spacing="-3">IMPACT</text>
+    <text x="300" y="180" fill="url(#goldGradient)" font-family="'Outfit', sans-serif" font-size="70" font-weight="900" text-anchor="middle" letter-spacing="-2">THROUGH</text>
+    <text x="300" y="265" fill="#38bdf8" font-family="'Outfit', sans-serif" font-size="80" font-weight="900" text-anchor="middle" letter-spacing="-3">DESIGN.</text>
+    <circle cx="300" cy="360" r="45" fill="none" stroke="url(#goldGradient)" stroke-width="4"/>
+    <polygon points="290,340 320,360 290,380" fill="#fbbf24"/>
+  </g>
+
+  <!-- Typography & Story -->
+  <text x="80" y="720" fill="#ffffff" font-family="'Outfit', 'Inter', sans-serif" font-size="50" font-weight="900" letter-spacing="-1">CREATIVE POSTER</text>
+  <text x="80" y="768" fill="#fbbf24" font-family="'Outfit', 'Inter', sans-serif" font-size="30" font-weight="700">Experimental Design &amp; Print</text>
+  <text x="80" y="820" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="17">
+    <tspan x="80" dy="0">Bold editorial layout, dynamic Swiss grid typography, and</tspan>
+    <tspan x="80" dy="26">avant-garde visual language for high-profile exhibitions.</tspan>
+  </text>
+
+  <!-- Bottom Details -->
+  <line x1="80" y1="915" x2="720" y2="915" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="80" y="955" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="14" font-weight="600">DELIVERABLES: EXHIBITION PRINTS • EVENT BANNERS</text>
+  <text x="720" y="955" fill="#fbbf24" font-family="'Inter', sans-serif" font-size="14" font-weight="800" text-anchor="end">VIEW POSTER →</text>
+</svg>

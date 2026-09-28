@@ -1,0 +1,1895 @@
+@import "https://fonts.googleapis.com/css2?family=Preahvihear&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap";
+:root {
+    --menu-color: #FFFFFF;
+    --menu_red-color: #D4AF37;
+    --yellow-color: #D4AF37;
+    --blue-color: #D4AF37;
+    --green-color: #09aa2f;
+    --gold-primary: #D4AF37;
+    --gold-secondary: #C59B27;
+    --gold-light: #FFF4B8;
+    --gold-dark: #8C6510;
+    --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #FFF4B8 50%, #C59B27 100%);
+    --gold-glow: 0 0 15px rgba(212, 175, 55, 0.45);
+    --dark-primary: #111111;
+    --dark-secondary: #1C1C1C;
+    --menu-font: Preahvihear, sans-serif;
+    --title-font: 'Qwitcher Grypen', cursive;
+    --poppins: Poppins, sans-serif
+}
+
+.crm_section {
+    padding: 150px 0 70px;
+    background-image: url(../images/crm/crm_banner-01.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+.crm_section .submit_btn button,
+.modal .submit_btn button {
+    background-color: var(--yellow-color);
+    border: 1px solid #000;
+    outline: none;
+    padding: 10px 35px;
+    border-radius: 7px;
+    font-weight: 700;
+    font-family: var(--poppins);
+    position: relative;
+    transition: .5s;
+    z-index: 1;
+    overflow: hidden
+}
+
+.crm_section .submit_btn button::before,
+.modal .submit_btn button::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: -1;
+    transition: transform .4s;
+    transform: scaleX(0);
+    transform-origin: right
+}
+
+.crm_section .submit_btn button:hover::before,
+.modal .submit_btn button:hover:before {
+    transform: scaleX(1);
+    transform-origin: left
+}
+
+.crm_con h5 {
+    margin-bottom: 30px;
+    font-family: var(--poppins);
+    font-weight: 600;
+}
+
+/*.crm_img_con {*/
+
+/*    padding: 20px;*/
+
+/*}*/
+
+.crm_form {
+    padding: 50px;
+    background-color: #F6F6F6;
+    box-shadow: -27px 15px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+    /* margin-right: 50px */
+}
+
+.crm_form h3 {
+    margin-bottom: 30px;
+    font-family: var(--poppins);
+    font-weight: 600;
+}
+
+.crm_features h1 {
+    font-family: var(--poppins);
+    /* color: var(--blue-color); */
+}
+
+.crm_ico_sec img {
+    width: 40px;
+}
+
+.sol_we_do {
+    /* background: url(../images/home/what_we_do/bg.webp); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    position: relative
+}
+
+.sol_we_do .medias {
+    display: flex;
+    gap: 20px;
+    align-items: center
+}
+
+.sol_we_do .medias img {
+    width: 60px
+}
+
+.sol_we_do .medias P {
+    line-height: 20px;
+    margin-bottom: 0
+}
+
+.sol_we_do .title {
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -6%
+}
+
+.sol_we_do .square {
+    background-color: #E32B00;
+    position: absolute;
+    width: 200px;
+    height: 30px;
+    top: 0;
+    left: 0;
+    transform: scaleY(0)
+}
+
+.sol_we_do .title h2 {
+    color: #fff;
+    position: absolute;
+    right: -100px;
+    top: 50%;
+    transform: translateY(-50%) rotate(270deg);
+    font-size: 50px;
+    font-weight: 700;
+    font-family: var(--poppins)
+}
+
+.sol_we_do .title span {
+    color: #000
+}
+
+.crm_sol h1 {
+    color: var(--menu_red-color);
+    font-family: var(--poppins);
+}
+
+.crm_red {
+    padding: 10px 20px;
+    border: 2px solid var(--menu_red-color);
+    border-radius: 2rem;
+    position: relative;
+}
+
+.crm_red h6 {
+    margin-bottom: 0px !important;
+}
+
+.crm_red_ball {
+    height: 25px;
+    width: 25px;
+    border-radius: 4rem;
+    background-color: var(--menu_red-color);
+    position: absolute;
+    left: -8px;
+}
+
+.crm_green_ball {
+    height: 25px;
+    width: 25px;
+    border-radius: 4rem;
+    background-color: var(--green-color);
+    position: absolute;
+    left: -8px;
+}
+
+.crm_green {
+    padding: 10px 20px;
+    border: 2px solid var(--green-color);
+    border-radius: 2rem;
+    position: relative;
+}
+
+.crm_green h6 {
+    margin-bottom: 0px !important;
+}
+
+.crm_book_sec {
+    padding: 30px 50px;
+    /* background-image: url(../images/services/service_bg.svg); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+.crm_book_sec .book_demo_btn {
+    background-image: url(../images/work/list_bg.svg);
+    color: #000;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+}
+
+.header_crm a {
+    background: url(../images/home/Button.png);
+    background-size: 60% 100%;
+    border-radius: 20px;
+    padding: 7px 25px;
+    margin-right: 20px;
+    font-family: var(--menu-font);
+    color: #000;
+    text-decoration: none
+}
+
+.header_crm a span img {
+    width: 22px;
+    margin-right: 10px;
+    transition: .5s
+}
+
+.header_crm a:hover img {
+    animation: trine 1.5s infinite linear
+}
+
+@keyframes trine {
+    from {
+        transform: rotate3d(0, 0, 1, 0deg)
+    }
+    20%,
+    32%,
+    44%,
+    56%,
+    68% {
+        transform: rotate3d(0, 0, 1, 0deg)
+    }
+    23%,
+    35%,
+    47%,
+    59%,
+    71% {
+        transform: rotate3d(0, 0, 1, 15deg)
+    }
+    26%,
+    38%,
+    50%,
+    62%,
+    74% {
+        transform: rotate3d(0, 0, 1, 0deg)
+    }
+    29%,
+    41%,
+    53%,
+    65%,
+    77% {
+        transform: rotate3d(0, 0, 1, -15deg)
+    }
+    80% {
+        transform: rotate3d(0, 0, 1, 0deg)
+    }
+}
+
+/* .crm_funnel_h1 {
+    color: var(--green-color);
+} */
+
+.modal_bg {
+    /* background-color: #000; */
+    /* background-color: var(--yellow-color); */
+    background-image: url(../images/home/our_process/bg.png);
+    background-position: center;
+    background-size: 50% 80%;
+    background-repeat: no-repeat;
+    padding-right: 20px;
+}
+
+.modal_bg h3 {
+    color: var(--yellow-color);
+}
+
+.crm_modal .modal-body {
+    /* background-color: #000; */
+    position: relative;
+}
+
+/* .btn-close {
+    position: absolute;
+    right: -10px;
+    top: -15px;
+} */
+
+.crm_modal_cl {
+    position: absolute;
+    right: -20px;
+    top: -15px;
+    box-sizing: content-box;
+    width: 1em;
+    height: 1em;
+    /* padding: 0.25em 0.25em; */
+    padding: 10px 10px 10px 10px;
+    color: #000;
+    border: 0;
+    border-radius: 20rem;
+    background-color: var(--yellow-color);
+    color: #000;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .crm_modal_cl {
+    font-size: 26px;
+} */
+
+.btn-close-bg {
+    background-color: var(--yellow-color);
+    color: #000;
+}
+
+.crm_form_bg .popup_services .right_side .service_contact input[type=text] {
+    width: 100%;
+    height: 100%;
+}
+
+.mob_our_process {
+    background-size: 25%;
+}
+
+@media screen and (max-width:990px) {
+    .smd1 {
+        display: none;
+    }
+    .header_call a {
+        display: none;
+    }
+    .crm_img_con img {
+        height: 300px;
+        width: 300px;
+        object-fit: contain;
+    }
+    .crm_section {
+        padding: 80px 20px;
+    }
+    .crm_form {
+        padding: 25px;
+    }
+    .crm_book_sec {
+        padding: 50px 15px;
+    }
+    .mob_our_process {
+        padding: 10px 0 70px;
+    }
+    .mob_our_process .content p {
+        font-size: 14px !important;
+    }
+}
+
+@media screen and (max-width:1330px) {
+    .header_call a {
+        display: none;
+    }
+}
+
+/* ==========================================================
+   GROWNOWW LUXURY GOLD & BLACK THEME
+   According to the GN Logo
+   ========================================================== */
+
+/* 1. BRAND LOGO & SHINING COMPANY NAME */
+.navbar-brand {
+    display: inline-flex !important;
+    align-items: center !important;
+    text-decoration: none !important;
+    gap: 12px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.brand-logo-img {
+    height: 52px !important;
+    width: auto !important;
+    max-height: 54px !important;
+    object-fit: contain;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.navbar-brand:hover .brand-logo-img {
+    transform: scale(1.06);
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+}
+
+.brand-company-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: none;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+    background: linear-gradient(
+        115deg,
+        #C59B27 0%,
+        #D4AF37 22%,
+        #B8860B 38%,
+        #FFFDE0 46%,
+        #FFFFFF 50%,
+        #FFFDE0 54%,
+        #B8860B 62%,
+        #D4AF37 78%,
+        #C59B27 100%
+    );
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: goldBrandShine 1.8s cubic-bezier(0.25, 1, 0.5, 1) 0.3s 3 normal forwards;
+    filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.45));
+    user-select: none;
+}
+
+@keyframes goldBrandShine {
+    0% {
+        background-position: 150% center;
+        filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.45));
+    }
+    50% {
+        filter: drop-shadow(0 0 16px rgba(255, 245, 160, 0.95)) drop-shadow(0 0 6px rgba(212, 175, 55, 0.9));
+    }
+    100% {
+        background-position: -150% center;
+        filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.45));
+    }
+}
+
+.navbar-brand:hover .brand-company-name,
+.footer_logo a:hover .brand-company-name {
+    animation: goldBrandShineHover 1.2s ease-in-out 1 normal forwards;
+}
+
+@keyframes goldBrandShineHover {
+    0% {
+        background-position: 150% center;
+        filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.45));
+    }
+    50% {
+        filter: drop-shadow(0 0 16px rgba(255, 245, 160, 0.95)) drop-shadow(0 0 6px rgba(212, 175, 55, 0.9));
+    }
+    100% {
+        background-position: -150% center;
+        filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.45));
+    }
+}
+
+/* Footer Brand */
+.footer_logo a {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 12px;
+    text-decoration: none !important;
+    margin-bottom: 18px;
+}
+
+.brand-logo-img-footer {
+    height: 56px !important;
+    width: auto !important;
+    max-height: 60px !important;
+    object-fit: contain;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.35));
+    transition: transform 0.3s ease;
+}
+
+.footer_logo a:hover .brand-logo-img-footer {
+    transform: scale(1.06);
+}
+
+.footer-brand-name {
+    font-size: 28px !important;
+}
+
+/* 2. THEME COLOR OVERRIDES (GOLD & BLACK PALETTE) */
+
+/* Menu bar & active line */
+.menu_section {
+    background-color: #FFFFFF !important;
+    border-bottom: 2px solid rgba(212, 175, 55, 0.25);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+.main_menu::before {
+    background-color: var(--gold-primary) !important;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.7) !important;
+}
+
+.navbar .navbar-nav a {
+    color: #111111 !important;
+    font-weight: 500;
+    transition: color 0.25s ease;
+}
+
+.navbar .navbar-nav a:hover,
+.navbar .navbar-nav a.active {
+    color: var(--gold-primary) !important;
+}
+
+/* Header Action Buttons */
+.header_contact a,
+.header_crm a {
+    background: linear-gradient(135deg, #111111 0%, #1F1F1F 100%) !important;
+    color: #FFF2A1 !important;
+    border: 1.5px solid #D4AF37 !important;
+    box-shadow: 0 2px 10px rgba(212, 175, 55, 0.3) !important;
+    border-radius: 24px !important;
+    padding: 8px 26px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
+
+.header_contact a:hover,
+.header_crm a:hover {
+    background: linear-gradient(135deg, #D4AF37 0%, #FFF2A1 50%, #C59B27 100%) !important;
+    color: #111111 !important;
+    border-color: #D4AF37 !important;
+    box-shadow: 0 4px 18px rgba(212, 175, 55, 0.6) !important;
+    transform: translateY(-2px);
+}
+
+/* Fixed Quote Side Button */
+.fixed_quote {
+    background: linear-gradient(135deg, #D4AF37 0%, #FFF2A1 50%, #C59B27 100%) !important;
+    color: #111111 !important;
+    font-weight: 700 !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    box-shadow: 0 4px 16px rgba(212, 175, 55, 0.55) !important;
+}
+
+/* Floating Call Button */
+.floating_call {
+    background: linear-gradient(135deg, #D4AF37 0%, #C59B27 100%) !important;
+    color: #111111 !important;
+    box-shadow: 0 4px 16px rgba(212, 175, 55, 0.5) !important;
+}
+
+/* Form & Primary CTA Buttons */
+.crm_section .submit_btn button,
+.modal .submit_btn button,
+.submit_btn button,
+.btn-primary,
+.explore,
+.query_form .submit_btn button {
+    background: linear-gradient(135deg, #D4AF37 0%, #FFF2A1 50%, #C59B27 100%) !important;
+    color: #111111 !important;
+    border: 1px solid #B8860B !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4) !important;
+    transition: all 0.3s ease !important;
+}
+
+.crm_section .submit_btn button:hover,
+.modal .submit_btn button:hover,
+.submit_btn button:hover,
+.btn-primary:hover,
+.explore:hover,
+.query_form .submit_btn button:hover {
+    background: linear-gradient(135deg, #111111 0%, #222222 100%) !important;
+    color: #FFF2A1 !important;
+    border-color: #D4AF37 !important;
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6) !important;
+    transform: translateY(-2px);
+}
+
+/* What We Do / Service Icon Highlights */
+.what_we_do .card .card_body .icon,
+.service_box:hover,
+.leader_ship .content h2,
+.our_services .service_box .content h5:hover {
+    color: #D4AF37 !important;
+}
+
+/* Footer Highlights */
+.footer_navbar h6,
+.footer-rights {
+    color: #D4AF37 !important;
+}
+
+.footer_social .icon:hover {
+    border-color: #D4AF37 !important;
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.5) !important;
+}
+
+/* Bootstrap Overrides */
+.text-primary {
+    color: #D4AF37 !important;
+}
+
+.bg-primary {
+    background-color: #D4AF37 !important;
+    color: #111111 !important;
+}
+
+.border-primary {
+    border-color: #D4AF37 !important;
+}
+
+/* Mobile Responsiveness for Shining Brand */
+@media (max-width: 768px) {
+    .brand-company-name {
+        font-size: 20px;
+        letter-spacing: 0.3px;
+    }
+    .brand-logo-img {
+        height: 40px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-company-name {
+        font-size: 17px;
+    }
+    .brand-logo-img {
+        height: 34px !important;
+    }
+}
+
+/* 3. BRANDED BANNER & SECTION BACKGROUND OVERRIDES */
+.service_title {
+    background-image: url(../images/services/service_bg.svg) !important;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
+.work_banner {
+    background: url(../images/work/work_banner.png) center center / cover no-repeat !important;
+}
+
+.leader_ship_one {
+    background: linear-gradient(135deg, #121212 0%, #1e1e1e 50%, #2a2208 100%) !important;
+    border-bottom: 2px solid rgba(212, 175, 55, 0.3) !important;
+}
+
+.leader_ship_one h4,
+.leader_ship_one h6,
+.leader_ship_one p {
+    color: #ffffff !important;
+}
+
+/* 4. PRELOADER BRANDING */
+.preloader {
+    background: #ffffff !important;
+}
+
+.preloader .preloader_inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto !important;
+}
+
+.preloader .preloader_inner img {
+    height: 70px !important;
+    width: auto !important;
+    animation: preloaderPulse 1.2s ease-in-out infinite;
+    filter: drop-shadow(0 0 16px rgba(212, 175, 55, 0.55));
+}
+
+@keyframes preloaderPulse {
+    0%, 100% {
+        transform: scale(0.92);
+        opacity: 0.85;
+    }
+    50% {
+        transform: scale(1.08);
+        opacity: 1;
+        filter: drop-shadow(0 0 24px rgba(212, 175, 55, 0.85));
+    }
+}
+
+/* 5. HIGH-CLARITY SERVICE CARD & HERO IMAGE STYLES */
+.service_section .service_card .img {
+    width: 90% !important;
+    margin: 15px auto 25px !important;
+}
+
+.service_section .service_card .img img {
+    width: 100% !important;
+    height: 195px !important;
+    object-fit: cover !important;
+    border-radius: 14px !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease !important;
+}
+
+.service_section .service_card:hover .img img {
+    transform: translateY(-4px) scale(1.02) !important;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16) !important;
+}
+
+.graphic_section.service_section .img {
+    text-align: center !important;
+    width: 92% !important;
+    margin: 0 auto !important;
+}
+
+.graphic_section.service_section .img img {
+    width: 100% !important;
+    max-height: 380px !important;
+    object-fit: cover !important;
+    border-radius: 16px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+    transition: transform 0.4s ease, box-shadow 0.4s ease !important;
+}
+
+.graphic_section.service_section:hover .img img {
+    transform: scale(1.01) !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.15) !important;
+}
+
+.website_dev .dev_img img,
+.custom_soft .img img,
+.graphic_design_dev .dev_img img,
+.mob_app_dev .dev_img img {
+    border-radius: 16px !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1) !important;
+    object-fit: cover !important;
+    max-height: 380px !important;
+    width: 100% !important;
+    transition: transform 0.4s ease !important;
+}
+
+.crm_img_con img {
+    border-radius: 16px !important;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12) !important;
+    max-width: 100% !important;
+    object-fit: cover !important;
+}
+
+/* Who We Are - Floating Brand Logo */
+.who_we_are .who_we_are_floating_logo {
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 10px !important;
+}
+
+.who_we_are .who_we_are_floating_logo img.floating_brand_logo {
+    width: 100% !important;
+    max-width: 280px !important;
+    height: auto !important;
+    display: block !important;
+    filter: drop-shadow(0 15px 30px rgba(212, 175, 55, 0.45)) !important;
+    animation: floating 3.2s infinite ease-in-out !important;
+    transition: transform 0.4s ease, filter 0.4s ease !important;
+}
+
+.who_we_are .who_we_are_floating_logo img.floating_brand_logo:hover {
+    filter: drop-shadow(0 20px 40px rgba(212, 175, 55, 0.65)) !important;
+}
+
+/* Who We Are - Modern Landscape Video Container */
+.who_we_are .who_we_are_video_container {
+    position: relative !important;
+    width: 100% !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+    background: #000000 !important;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(212, 175, 55, 0.3) !important;
+    aspect-ratio: 16 / 9 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: box-shadow 0.4s ease, transform 0.4s ease !important;
+}
+
+.who_we_are .who_we_are_video_container:hover {
+    box-shadow: 0 24px 55px rgba(0, 0, 0, 0.38), 0 0 28px rgba(212, 175, 55, 0.45) !important;
+}
+
+.who_we_are .landscape_video_player {
+    width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+    object-fit: cover !important;
+    display: block !important;
+    border-radius: 18px !important;
+    background-color: #000 !important;
+}
+
+@media (max-width: 768px) {
+    .who_we_are .who_we_are_floating_logo {
+        max-width: 220px !important;
+        margin-bottom: 25px !important;
+    }
+    .who_we_are .who_we_are_video_container {
+        border-radius: 12px !important;
+    }
+    .who_we_are .landscape_video_player {
+        border-radius: 12px !important;
+    }
+}
+
+/* About Us - Leadership Executive Cards */
+.leaders .col-lg-12 {
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 40px !important;
+    font-family: var(--poppins) !important;
+}
+
+.leaders .karthik_box,
+.leaders .guru_box {
+    background: #ffffff !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    border-radius: 20px !important;
+    padding: 35px 45px !important;
+    min-width: 290px !important;
+    max-width: 360px !important;
+    flex: 1 1 290px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.35s ease !important;
+    text-align: center !important;
+    position: relative !important;
+}
+
+.leaders .karthik_box:hover,
+.leaders .guru_box:hover {
+    transform: translateY(-6px) !important;
+    border-color: rgba(212, 175, 55, 0.8) !important;
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2), 0 0 15px rgba(212, 175, 55, 0.15) !important;
+}
+
+.leaders .leader_avatar {
+    width: 84px !important;
+    height: 84px !important;
+    margin: 0 auto 20px !important;
+    border-radius: 50% !important;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.04) 100%) !important;
+    border: 2px solid rgba(212, 175, 55, 0.45) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #D4AF37 !important;
+    font-size: 38px !important;
+    transition: all 0.35s ease !important;
+}
+
+.leaders .karthik_box:hover .leader_avatar,
+.leaders .guru_box:hover .leader_avatar {
+    background: linear-gradient(135deg, #D4AF37 0%, #C59B27 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.5) !important;
+    transform: scale(1.05) !important;
+}
+
+.leaders .name h4 {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    color: #111111 !important;
+    margin-bottom: 8px !important;
+    font-family: var(--poppins) !important;
+}
+
+.leaders .name h6 {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #D4AF37 !important;
+    margin: 0 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.8px !important;
+}
+
+@media (max-width: 768px) {
+    .leaders .karthik_box,
+    .leaders .guru_box {
+        padding: 25px 20px !important;
+        min-width: 100% !important;
+    }
+}
+
+/* Work Page - Tabs and Top-Aligned Content */
+.work_section .list_names .custom_list {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px 12px !important;
+    justify-content: flex-start !important;
+    margin-bottom: 25px !important;
+}
+
+.work_section .list_names .option-btn {
+    padding: 8px 18px !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+    border-radius: 20px !important;
+}
+
+.work_section .work_img img {
+    border-radius: 16px !important;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08) !important;
+    transition: transform 0.4s ease, box-shadow 0.4s ease !important;
+    width: 100% !important;
+}
+
+.work_section .work_img:hover img {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Words Start from Top */
+.work_section .create_product_content.start_from_top {
+    margin-top: 0 !important;
+    padding-top: 10px !important;
+}
+
+.work_section .create_product_content.start_from_top .work_lead_title {
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    font-family: var(--poppins) !important;
+    color: #111111 !important;
+    margin-bottom: 15px !important;
+    line-height: 1.25 !important;
+}
+
+.work_section .create_product_content.start_from_top .work_lead_title span {
+    color: var(--gold-primary) !important;
+}
+
+.work_section .create_product_content.start_from_top p {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    font-size: 16px !important;
+    line-height: 1.8 !important;
+    color: #444444 !important;
+    margin-bottom: 28px !important;
+    padding-right: 20px !important;
+}
+
+/* =========================================================
+   COMPREHENSIVE MOBILE OPTIMIZATION
+   ========================================================= */
+
+@media (max-width: 991px) {
+    /* Prevent page horizontal scroll */
+    body {
+        overflow-x: hidden !important;
+    }
+
+    /* Work Page Banner */
+    .work_banner {
+        height: auto !important;
+        min-height: 160px !important;
+        padding: 35px 15px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+    .work_banner .content {
+        font-size: 18px !important;
+        line-height: 1.4 !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin-bottom: 8px !important;
+    }
+    .work_banner .sub_content {
+        font-size: 14px !important;
+        line-height: 1.4 !important;
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    /* Work Page Section Header & Nav Pills */
+    .work_section {
+        padding: 30px 0 !important;
+    }
+    .work_section .create_products {
+        text-align: center !important;
+        margin-bottom: 20px !important;
+    }
+    .work_section .create_products h1 {
+        font-size: 26px !important;
+        line-height: 1.3 !important;
+    }
+    .work_section .list_names {
+        margin-top: 0 !important;
+    }
+    .work_section .list_names .custom_list {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        padding: 6px 4px 14px !important;
+        gap: 8px !important;
+        justify-content: flex-start !important;
+    }
+    .work_section .list_names .custom_list::-webkit-scrollbar {
+        display: none !important;
+    }
+    .work_section .list_names .option-btn {
+        flex: 0 0 auto !important;
+        font-size: 13px !important;
+        padding: 8px 16px !important;
+        border-radius: 25px !important;
+    }
+
+    /* Work Page Item Cards & Images */
+    .work_section .work_img {
+        width: 100% !important;
+        max-width: 100% !important;
+        left: 0 !important;
+        margin: 0 auto 20px !important;
+        position: relative !important;
+        text-align: center !important;
+    }
+    .work_section .work_img img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 360px !important;
+        object-fit: cover !important;
+        border-radius: 14px !important;
+        display: block !important;
+    }
+    .work_section .img_content.first_content {
+        right: 15px !important;
+        top: 15px !important;
+        left: auto !important;
+    }
+    .work_section .img_content.second_content {
+        left: 15px !important;
+        top: 15px !important;
+        right: auto !important;
+    }
+    .work_section .img_content h3 {
+        font-size: 20px !important;
+        line-height: 22px !important;
+    }
+
+    /* Work Page Content & Top-Alignment */
+    .work_section .pr-5per,
+    .work_section .pl-5per {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    .work_section .create_product_content {
+        margin-top: 10px !important;
+    }
+    .work_section .create_product_content.start_from_top {
+        margin-top: 0 !important;
+        padding-top: 5px !important;
+    }
+    .work_section .create_product_content.start_from_top .work_lead_title {
+        font-size: 24px !important;
+        margin-bottom: 12px !important;
+        text-align: left !important;
+    }
+    .work_section .create_product_content p,
+    .work_section .create_product_content.start_from_top p {
+        font-size: 14px !important;
+        line-height: 1.65 !important;
+        padding-right: 0 !important;
+        margin-bottom: 20px !important;
+        text-align: left !important;
+    }
+    .work_section .create_product_content .content_box {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        margin: 0 !important;
+        gap: 8px !important;
+    }
+    .work_section .content_box .content_box_inner {
+        width: 100% !important;
+        border-radius: 10px !important;
+        padding: 12px 16px !important;
+        text-align: left !important;
+    }
+    .work_section .content_box .content_box_inner h5 {
+        font-size: 12px !important;
+        margin-bottom: 4px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+    }
+    .work_section .content_box .content_box_inner h6 {
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        margin: 0 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Who We Are Mobile Optimization */
+    .who_we_are.p-100 {
+        padding: 50px 0 40px !important;
+    }
+    .who_we_are .row.p-50 {
+        padding: 20px 0 !important;
+    }
+    .who_we_are h2 {
+        font-size: 28px !important;
+        margin-bottom: 10px !important;
+    }
+    .who_we_are .who_we_are_floating_logo {
+        width: 170px !important;
+        max-width: 170px !important;
+        margin: 0 auto 25px !important;
+        padding: 0 !important;
+    }
+    .who_we_are .who_we_are_floating_logo img.floating_brand_logo {
+        max-width: 170px !important;
+        filter: drop-shadow(0 8px 18px rgba(212, 175, 55, 0.4)) !important;
+    }
+    .who_we_are .who_we_are_video_container {
+        width: 100% !important;
+        border-radius: 14px !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(212, 175, 55, 0.25) !important;
+        aspect-ratio: 16 / 9 !important;
+    }
+    .who_we_are .landscape_video_player {
+        border-radius: 14px !important;
+    }
+    .who_we_are .arrow {
+        display: none !important;
+    }
+
+    /* About Us - We Are Section */
+    .we_are .title h2 {
+        font-size: 20px !important;
+    }
+    .we_are .title h1 {
+        font-size: 32px !important;
+    }
+    .we_are .title h3.ffsize {
+        font-size: 18px !important;
+    }
+    .we_are .title_content p {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+        padding: 0 10px !important;
+    }
+}
+
+/* =========================================================
+   NAVBAR: CRM BEFORE MENU OPTION IN TOP RIGHT SIDE
+   ========================================================= */
+
+.navbar .container-fluid {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    position: relative !important;
+}
+
+.nav_right_actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    position: relative !important;
+    z-index: 1050 !important;
+}
+
+.nav_right_actions .header_crm {
+    display: inline-flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+}
+
+.nav_right_actions .header_crm a {
+    margin-right: 0 !important;
+    white-space: nowrap !important;
+    background: linear-gradient(135deg, #111111 0%, #1F1F1F 100%) !important;
+    color: #FFF2A1 !important;
+    border: 1.5px solid #D4AF37 !important;
+    box-shadow: 0 2px 10px rgba(212, 175, 55, 0.3) !important;
+    border-radius: 24px !important;
+    padding: 8px 24px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.nav_right_actions .header_crm a:hover {
+    background: linear-gradient(135deg, #D4AF37 0%, #FFF2A1 50%, #C59B27 100%) !important;
+    color: #111111 !important;
+    box-shadow: 0 4px 18px rgba(212, 175, 55, 0.6) !important;
+    transform: translateY(-2px);
+}
+
+.menu_button_box {
+    display: none !important;
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-collapse {
+        order: 2 !important;
+        display: flex !important;
+        height: auto !important;
+        flex-grow: 1 !important;
+        margin-left: 35px !important;
+    }
+    .nav_right_actions {
+        order: 3 !important;
+        margin-left: auto !important;
+    }
+    .nav_right_actions .navbar-toggler {
+        display: none !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar .container-fluid {
+        flex-wrap: wrap !important;
+        padding: 0 15px !important;
+    }
+    .nav_right_actions {
+        order: 2 !important;
+        margin-left: auto !important;
+        gap: 8px !important;
+    }
+    .nav_right_actions .header_crm a {
+        padding: 6px 14px !important;
+        font-size: 13px !important;
+        border-radius: 18px !important;
+    }
+    .nav_right_actions .navbar-toggler {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 6px 10px !important;
+        font-size: 18px !important;
+        color: #000000 !important;
+        background: transparent !important;
+        border: 1px solid rgba(0, 0, 0, 0.15) !important;
+        border-radius: 8px !important;
+        outline: none !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+    }
+    .nav_right_actions .navbar-toggler:focus {
+        border-color: #D4AF37 !important;
+    }
+    .navbar .collapse.navbar-collapse {
+        order: 4 !important;
+        flex-basis: 100% !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+}
+
+/* ==========================================================
+   WHAT WE DO - LOGO THEME, BLACK "WHAT", WHITE "WE DO"
+   ========================================================== */
+.what_we_do,
+.sol_we_do {
+    background: radial-gradient(circle at 12% 20%, rgba(212, 175, 55, 0.12) 0%, rgba(255, 255, 255, 0.98) 45%, rgba(212, 175, 55, 0.15) 100%), linear-gradient(135deg, #ffffff 0%, #fffdf4 40%, #fef8e7 100%) !important;
+    border-top: 1px solid rgba(212, 175, 55, 0.25);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    position: relative;
+}
+
+.what_we_do .square,
+.sol_we_do .square {
+    background-color: #D4AF37 !important;
+}
+
+.what_we_do .title h2,
+.sol_we_do .title h2 {
+    color: #ffffff !important;
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.what_we_do .title h2 .what-word,
+.what_we_do .title span.what-word,
+.what_we_do .title span:first-child,
+.sol_we_do .title span:first-child {
+    color: #000000 !important;
+    font-weight: 800 !important;
+    text-shadow: none !important;
+}
+
+.what_we_do .title h2 .wedo-word,
+.what_we_do .title .wedo-word {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+.what_we_do .medias p,
+.sol_we_do .medias p {
+    color: #1a1a1a !important;
+    font-weight: 500;
+}
+
+.what_we_do .medias:hover img,
+.sol_we_do .medias:hover img {
+    transform: scale(1.08);
+    transition: transform 0.3s ease;
+}
+
+/* ==========================================================
+   OUR PROCESS - WHITE & NEON GOLD THEME
+   ========================================================== */
+.our_process {
+    background: #ffffff !important;
+    position: relative;
+}
+
+.our_process .title {
+    color: #0f172a !important;
+}
+
+.our_process .title span {
+    color: #FFE600 !important;
+    text-shadow: 0 0 12px rgba(255, 230, 0, 0.6) !important;
+}
+
+.our_process .step_badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #FFFDE0 0%, #FFE600 100%);
+    color: #000000;
+    font-weight: 800;
+    font-size: 0.78rem;
+    padding: 3px 12px;
+    border-radius: 20px;
+    border: 1px solid #FFE600;
+    box-shadow: 0 0 10px rgba(255, 230, 0, 0.35);
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.our_process .content h3 {
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+}
+
+.our_process .content p {
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 8px;
+}
+
+.our_process .process_tags {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #b8860b;
+    background: rgba(255, 230, 0, 0.1);
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 6px;
+    border-left: 3px solid #FFE600;
+}
+
+.our_process .behind_work {
+    background: #ffffff;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.our_process .behind_work a {
+    color: #000000 !important;
+    font-weight: 700;
+    background: #FFE600;
+    padding: 6px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 8px;
+    border: none;
+    box-shadow: 0 0 10px rgba(255, 230, 0, 0.4);
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.our_process .behind_work a:hover {
+    transform: translateY(-2px);
+    color: #000000 !important;
+}
+
+.process_sketch_img {
+    width: 95px;
+    height: 75px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.process_sketch_img:hover {
+    transform: scale(1.08);
+}
+
+.process_sketch_behind {
+    max-height: 90px;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Precise curved arrow placements */
+.process_curved_arrow {
+    position: absolute;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.arrow_01_to_02 {
+    right: -45px;
+    bottom: -35px;
+    width: 70px;
+}
+
+.arrow_02_to_03 {
+    right: 30px;
+    bottom: -60px;
+    width: 50px;
+}
+
+.arrow_03_to_04 {
+    left: -45px;
+    bottom: -45px;
+    width: 70px;
+}
+
+.arrow_04_to_05 {
+    right: -35px;
+    bottom: -40px;
+    width: 70px;
+}
+
+@media (max-width: 991px) {
+    .process_curved_arrow {
+        display: none !important;
+    }
+}
+
+.process_bottom_banner {
+    background: linear-gradient(135deg, #fffef7 0%, #fff9d6 100%) !important;
+    border: 2px solid #FFE600 !important;
+    box-shadow: 0 10px 30px rgba(255, 230, 0, 0.2) !important;
+    border-radius: 14px;
+}
+
+.process_bottom_banner .banner_title {
+    color: #000000 !important;
+    font-weight: 900;
+    font-size: 1.45rem;
+    letter-spacing: 1.5px;
+}
+
+.process_bottom_banner .banner_sub {
+    color: #b8860b !important;
+    font-weight: 700;
+    font-size: 1.12rem;
+    margin: 8px 0;
+}
+
+.process_bottom_banner .banner_desc {
+    color: #334155;
+    font-size: 1.05rem;
+}
+
+/* ==========================================================
+   WHY WORK WITH GROWNOWW - SINGLE LINE ART SKETCH SLIDER
+   ========================================================== */
+.work_with_us {
+    background-color: #ffffff;
+    background-image: repeating-linear-gradient(
+        0deg,
+        #f8fafc,
+        #f8fafc 1px,
+        transparent 1px,
+        transparent 28px
+    ), url(../images/home/work_with/bg.svg) !important;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.work_with_us .hand_shake .img img {
+    max-height: 220px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: block;
+}
+
+.work_with_us .slider_container h3 {
+    font-family: var(--poppins);
+    font-weight: 800;
+    color: #0f172a;
+    font-size: 1.85rem;
+    letter-spacing: 0.5px;
+}
+
+.work_with_us .slider_container p {
+    font-family: var(--menu-font);
+}
+
+.work_with_us .client_arrow_left,
+.work_with_us .client_arrow_right {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    opacity: 0.85;
+}
+
+.work_with_us .client_arrow_left:hover,
+.work_with_us .client_arrow_right:hover {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.work_with_us .client_arrow_left {
+    left: -40px;
+}
+
+.work_with_us .client_arrow_right {
+    right: -40px;
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.work_with_us .client_arrow_right:hover {
+    transform: translateY(-50%) rotate(180deg) scale(1.1);
+}
+
+@media (max-width: 991px) {
+    .work_with_us .client_arrow_left {
+        left: -15px;
+    }
+    .work_with_us .client_arrow_right {
+        right: -15px;
+    }
+}
+
+/* -------------------------------------------------------------
+   POPUP MODAL: PAPER CUT BORDER & CONNECTORS DESIGN
+------------------------------------------------------------- */
+.preloader {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+.popup_services {
+    background: transparent !important;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.28));
+    border-radius: 20px;
+    position: relative;
+    box-shadow: none !important;
+}
+
+.popup_services .left_side {
+    position: relative;
+    background: #eab308 !important;
+    background: linear-gradient(145deg, #f59e0b 0%, #d97706 100%) !important;
+    border-radius: 20px 0 0 20px !important;
+    border-right: 2px dashed rgba(0, 0, 0, 0.25) !important;
+    box-shadow: inset -4px 0 8px rgba(0, 0, 0, 0.08), inset 0 2px 4px rgba(255, 255, 255, 0.3) !important;
+}
+
+.popup_services .right_side {
+    position: relative;
+    background: #ffffff !important;
+    border-radius: 0 20px 20px 0 !important;
+    box-shadow: inset 4px 0 8px rgba(0, 0, 0, 0.03), 0 10px 25px rgba(0,0,0,0.05) !important;
+    border-left: 2px dashed rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Small neat perforated paper cut holes */
+.popup_services .connect {
+    width: 14px !important;
+    height: 14px !important;
+    background: #f8fafc !important;
+    border: 2px solid rgba(0, 0, 0, 0.18) !important;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.35), 0 1px 2px rgba(255, 255, 255, 0.8) !important;
+    border-radius: 50% !important;
+    left: calc(41.1% - 7px) !important;
+    z-index: 10;
+    transition: transform 0.2s ease;
+}
+
+.popup_services .connect:hover {
+    transform: scale(1.2);
+}
+
+.popup_services .left_side .form_content p {
+    color: #1e293b !important;
+    font-weight: 600 !important;
+    font-size: 1.05rem !important;
+}
+
+.popup_services .left_side .form_content h5 {
+    color: #0f172a !important;
+    font-weight: 800 !important;
+    font-size: 1.25rem !important;
+}
+
+/* ==========================================================================
+   GLOBAL SPACING, ALIGNMENT, MARGINS, PADDING & LINE-HEIGHT REFINEMENTS
+   (Pure Spacing & Alignment - Zero Color / Font / Layout / Content Changes)
+   ========================================================================== */
+
+/* 1. Typography Line Spacing & Readability */
+body {
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+p {
+    line-height: 1.75;
+    margin-bottom: 1rem;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+}
+
+h1 {
+    line-height: 1.2;
+}
+
+h2 {
+    line-height: 1.25;
+}
+
+h3 {
+    line-height: 1.3;
+}
+
+/* 2. Consistent Section Rhythm & Spacing */
+.p-100 {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.pt-150 {
+    padding-top: 130px;
+}
+
+.section_title_block,
+.title_block_centered {
+    margin-bottom: 40px;
+}
+
+.title {
+    margin-bottom: 30px;
+}
+
+/* 3. Hero & Banner Spacing Consistency */
+.work_banner,
+.service_title {
+    padding-top: 140px;
+    padding-bottom: 60px;
+}
+
+.work_banner .content h1,
+.service_title h2:first-of-type {
+    margin-bottom: 12px;
+}
+
+.work_banner .content p,
+.service_title p {
+    margin-top: 12px;
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+/* 4. Card Grids, Flexboxes & Vertical Alignment */
+.service_card,
+.work_img,
+.create_product_content,
+.behind_work,
+.first_row .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.service_card .content {
+    padding: 24px 20px;
+    flex-grow: 1;
+}
+
+.service_card .content h2 {
+    margin-bottom: 10px;
+    line-height: 1.35;
+}
+
+.service_card .content p {
+    line-height: 1.65;
+    margin-bottom: 16px;
+}
+
+.service_card .button_group {
+    padding: 0 20px 24px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* 5. Process Steps & Flow Alignment */
+.our_process .meet,
+.our_process .plan,
+.our_process .web_design {
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.our_process .step_badge {
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.our_process .content h3 {
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.our_process .content p {
+    margin-bottom: 14px;
+    line-height: 1.7;
+}
+
+.our_process .process_tags {
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
+/* 6. Form Field Spacing & Label Gaps */
+.query_form .form-control,
+.contact_page .form-control {
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.query_form label,
+.service_contact label {
+    margin-left: 8px;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+.service_contact .row > div {
+    margin-bottom: 10px;
+}
+
+/* 7. Footer Layout & Vertical Rhythm */
+.footer_social {
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+.footer_menu {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.footer_navbar h6,
+.footer_menu h6 {
+    margin-bottom: 22px;
+    line-height: 1.3;
+}
+
+.footer_navbar ul li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.footer_navbar ul li:last-child {
+    margin-bottom: 0;
+}
+
+.footer_menu .address {
+    margin-top: 14px;
+    line-height: 1.6;
+}
+
+.footer-copy {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    line-height: 1.6;
+}
+
+/* 8. Responsive Spacing & Alignment Adjustments */
+@media (max-width: 991px) {
+    .p-100 {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+    
+    .pt-150 {
+        padding-top: 100px;
+    }
+    
+    .work_banner,
+    .service_title {
+        padding-top: 110px;
+        padding-bottom: 45px;
+    }
+    
+    .footer_menu {
+        padding-top: 45px;
+        padding-bottom: 30px;
+    }
+    
+    .footer_menu .row > div {
+        margin-bottom: 30px;
+    }
+    
+    .footer_menu .row > div:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .p-100 {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    
+    .pt-150 {
+        padding-top: 85px;
+    }
+    
+    .work_banner,
+    .service_title {
+        padding-top: 90px;
+        padding-bottom: 35px;
+    }
+    
+    .service_card .content {
+        padding: 18px 14px;
+    }
+    
+    .service_card .button_group {
+        padding: 0 14px 18px 14px;
+    }
+    
+    .our_process .meet,
+    .our_process .plan,
+    .our_process .web_design {
+        padding: 16px;
+    }
+}
+
+
+

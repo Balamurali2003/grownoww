@@ -1,0 +1,47 @@
+<svg width="1280" height="221" viewBox="0 0 1280 221" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Horizontal continuous baseline across entire canvas -->
+  <line x1="0" y1="217" x2="475" y2="217" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="805" y1="217" x2="1280" y2="217" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Gold/Yellow Accent fills -->
+  <path d="M635 25 L650 48 L640 48 L645 68 L630 52 L638 52 Z" fill="#FAA300"/>
+  <polygon points="535,110 580,95 590,140 545,155" fill="#FAA300" opacity="0.95"/>
+  <polygon points="705,100 755,90 765,145 715,155" fill="#FAA300" opacity="0.9"/>
+
+  <!-- Left Partner Pointing at Ascending Trajectory -->
+  <path d="M475 217 C482 195, 492 168, 500 142 C508 125, 516 105, 522 85 C526 75, 534 70, 542 68 C550 66, 560 70, 564 80 C568 90, 562 110, 554 132 C546 155, 538 185, 530 217" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Left Head -->
+  <path d="M536 58 C532 48, 536 36, 545 32 C554 28, 564 30, 568 38 C572 46, 570 56, 562 62 C554 66, 544 64, 536 58 Z" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  <path d="M538 38 C545 26, 560 26, 568 34 C570 40, 568 48, 564 53" stroke="#1A1A1A" stroke-width="2.2" stroke-linecap="round"/>
+
+  <!-- Arms Gesture toward Growth Arrow -->
+  <path d="M545 80 C565 85, 590 85, 612 78 C618 76, 622 70, 616 64 C606 56, 582 60, 565 65" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  <path d="M535 100 C552 110, 575 118, 595 120 C602 120, 608 114, 604 106 C592 95, 568 90, 550 85" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Center Ascending Growth Chart & Rocket -->
+  <path d="M595 160 L620 130 L645 140 L675 70" stroke="#1A1A1A" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="665,65 682,65 680,82" fill="#1A1A1A"/>
+  <circle cx="595" cy="160" r="4.5" fill="#FAA300" stroke="#1A1A1A" stroke-width="1.5"/>
+  <circle cx="620" cy="130" r="4.5" fill="#FAA300" stroke="#1A1A1A" stroke-width="1.5"/>
+  <circle cx="645" cy="140" r="4.5" fill="#FAA300" stroke="#1A1A1A" stroke-width="1.5"/>
+  <circle cx="675" cy="70" r="6" fill="#FAA300" stroke="#1A1A1A" stroke-width="2"/>
+
+  <!-- Ascending Rocket alongside trajectory -->
+  <path d="M635 25 C630 35, 630 45, 626 50 C622 55, 615 58, 615 58 C622 58, 628 54, 630 52 C632 58, 636 60, 640 58 C642 54, 642 48, 640 45 C644 42, 646 32, 635 25 Z" stroke="#1A1A1A" stroke-width="1.8" fill="#FFFFFF"/>
+  <circle cx="634" cy="38" r="3" fill="#FAA300" stroke="#1A1A1A" stroke-width="1"/>
+
+  <!-- Right Partner Cheering / Collaborating -->
+  <path d="M690 60 C685 50, 689 38, 698 34 C706 30, 716 32, 720 40 C724 48, 722 58, 714 64 C706 68, 696 66, 690 60 Z" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  <path d="M692 40 C698 28, 714 28, 720 36 C723 42, 721 50, 717 54" stroke="#1A1A1A" stroke-width="2.2" stroke-linecap="round"/>
+
+  <path d="M685 72 C672 88, 660 112, 655 138 C650 160, 656 188, 665 217" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  <path d="M718 72 C732 90, 748 115, 762 142 C772 168, 780 192, 785 217" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Right Hands with Growth Roadmap Folio -->
+  <path d="M698 85 C712 98, 730 105, 748 108 C755 108, 760 100, 755 92 C745 82, 728 76, 715 72" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  <path d="M680 105 C695 115, 718 125, 738 128 C745 130, 750 122, 745 115 C732 102, 710 95, 695 90" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Connected Ground Line in center -->
+  <path d="M530 217 L665 217 M785 217 L805 217" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

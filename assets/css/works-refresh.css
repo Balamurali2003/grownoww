@@ -1,0 +1,116 @@
+/* Works page — new "We Create Digital Products" narrative section.
+   Added as its own block after the existing fixed-height .work_banner
+   (which is left untouched) rather than crammed inside it. */
+
+.build_products_section {
+    padding: 70px 0 80px;
+    background: #fdfaf3;
+    font-family: var(--poppins);
+}
+
+.build_products_section .bp_intro {
+    max-width: 820px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.build_products_section .bp_intro p {
+    color: #334155;
+    line-height: 1.85;
+    font-size: 16px;
+    margin-bottom: 14px;
+}
+
+.build_products_section .bp_question {
+    font-weight: 700;
+    font-size: 19px;
+    color: #0f172a;
+    margin: 20px 0;
+}
+
+.build_products_section h2 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 28px;
+    color: #0f172a;
+    letter-spacing: 1px;
+    margin-bottom: 36px;
+}
+
+.bp_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+    max-width: 1100px;
+    margin: 0 auto 55px;
+}
+
+.bp_card {
+    background: #fff;
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    border-radius: 16px;
+    padding: 26px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+}
+
+.bp_card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1);
+}
+
+.bp_card .bp_icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.12);
+    color: #b8891f;
+    font-size: 18px;
+    margin-bottom: 14px;
+}
+
+.bp_card h4 {
+    font-weight: 600;
+    font-size: 17px;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.bp_card p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #475569;
+    margin: 0;
+}
+
+.bp_outro {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 40px;
+    border-top: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.bp_outro p {
+    color: #475569;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.bp_outro .bp_tagline {
+    font-weight: 700;
+    font-size: 19px;
+    color: #0f172a;
+}
+
+@media (max-width: 768px) {
+    .build_products_section {
+        padding: 50px 0 60px;
+    }
+    .build_products_section h2 {
+        font-size: 23px;
+    }
+}

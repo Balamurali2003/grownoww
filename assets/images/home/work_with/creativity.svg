@@ -1,0 +1,43 @@
+<svg width="1280" height="221" viewBox="0 0 1280 221" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Horizontal continuous baseline across entire canvas -->
+  <line x1="0" y1="217" x2="480" y2="217" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="800" y1="217" x2="1280" y2="217" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Gold/Yellow Accent fills -->
+  <path d="M625 38 C625 24, 655 24, 655 38 C655 48, 645 54, 645 62 L635 62 C635 54, 625 48, 625 38 Z" fill="#FAA300" opacity="0.95"/>
+  <rect x="525" y="105" width="48" height="60" rx="3" fill="#FAA300" transform="rotate(-12 525 105)"/>
+  <polygon points="710,110 745,110 735,160 700,160" fill="#FAA300" opacity="0.9"/>
+
+  <!-- Character 1 (Left - Designer Sketching on Tablet) -->
+  <path d="M480 217 C485 200, 495 180, 502 165 C508 152, 515 130, 518 108 C519 98, 524 85, 532 78 C538 72, 548 70, 555 74 C562 78, 565 86, 563 95 C560 108, 552 125, 545 142 C540 155, 535 175, 530 195 C526 208, 522 217, 520 217" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Head & Hair Left -->
+  <path d="M540 68 C536 60, 540 48, 548 44 C556 40, 566 42, 570 50 C574 58, 572 68, 564 74 C556 78, 546 76, 540 68 Z" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  <path d="M542 48 C548 38, 562 38, 570 46 C572 52, 570 60, 566 64" stroke="#1A1A1A" stroke-width="2.2" stroke-linecap="round"/>
+
+  <!-- Designer Arms holding palette & stylus -->
+  <path d="M545 92 C532 102, 520 115, 512 130 C508 138, 514 148, 525 145 C538 140, 555 132, 568 128" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  <path d="M558 95 C572 105, 592 115, 608 118 C615 120, 620 115, 618 108 C612 95, 595 88, 580 84" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Center Idea Lightbulb & Floating Creative Canvas -->
+  <path d="M640 20 L640 10 M615 28 L605 20 M665 28 L675 20 M610 45 L600 45 M670 45 L680 45" stroke="#FAA300" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M625 38 C625 24, 655 24, 655 38 C655 48, 645 54, 645 62 L635 62 C635 54, 625 48, 625 38 Z" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  <path d="M635 65 L645 65 M637 68 L643 68" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  <path d="M630 100 L650 100 L650 140 L630 140 Z" stroke="#1A1A1A" stroke-width="1.8" stroke-dasharray="3 3"/>
+  <path d="M625 120 C635 110, 645 130, 655 120" stroke="#FAA300" stroke-width="2"/>
+
+  <!-- Character 2 (Right - Creative Director Reviewing Ideas) -->
+  <path d="M685 70 C680 60, 684 48, 692 44 C700 40, 710 42, 715 50 C719 58, 716 68, 708 74 C700 78, 690 76, 685 70 Z" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  <path d="M686 50 C692 38, 708 38, 715 46 C718 52, 716 60, 712 64" stroke="#1A1A1A" stroke-width="2.2" stroke-linecap="round"/>
+
+  <!-- Body & Coat Right -->
+  <path d="M680 82 C670 95, 662 118, 658 140 C655 158, 660 178, 665 198 C668 208, 670 217, 672 217" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  <path d="M710 82 C725 95, 740 115, 752 138 C762 158, 770 185, 775 217" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Right Character Hands holding art folio -->
+  <path d="M690 95 C705 108, 725 118, 742 120 C750 120, 755 112, 750 102 C742 90, 725 85, 710 82" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  <path d="M678 115 C690 125, 710 135, 728 138 C735 140, 740 132, 735 125 C725 112, 705 105, 692 98" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Connected Ground Line in center -->
+  <path d="M520 217 L672 217 M775 217 L800 217" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

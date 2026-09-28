@@ -1,0 +1,25 @@
+<svg width="120" height="90" viewBox="0 0 120 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main Browser / Design Window -->
+  <rect x="25" y="10" width="80" height="65" rx="5" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2.5"/>
+  
+  <!-- Browser Header Bar -->
+  <line x1="25" y1="24" x2="105" y2="24" stroke="#1A1A1A" stroke-width="1.8"/>
+  <circle cx="33" cy="17" r="2.5" fill="#EF4444"/>
+  <circle cx="41" cy="17" r="2.5" fill="#FAA300"/>
+  <circle cx="49" cy="17" r="2.5" fill="#22C55E"/>
+
+  <!-- Left Sidebar with code tags -->
+  <rect x="30" y="30" width="22" height="38" rx="2" fill="#F8FAFC" stroke="#1A1A1A" stroke-width="1.5"/>
+  <path d="M35 40 L38 43 L35 46 M44 52 L41 55 L44 58" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Main Canvas area with GrownowW Logo Design -->
+  <rect x="58" y="30" width="42" height="38" rx="3" fill="#FFFDF0" stroke="#FAA300" stroke-width="1.8"/>
+  <path d="M66 45 L71 58 L76 49 L81 58 L86 45" stroke="#FAA300" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="76" cy="38" r="3" fill="#1A1A1A"/>
+
+  <!-- Front UI Layer overlapping -->
+  <rect x="10" y="45" width="38" height="35" rx="4" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+  <line x1="16" y1="56" x2="40" y2="56" stroke="#1A1A1A" stroke-width="2"/>
+  <line x1="16" y1="64" x2="34" y2="64" stroke="#FAA300" stroke-width="2"/>
+  <line x1="16" y1="72" x2="28" y2="72" stroke="#1A1A1A" stroke-width="1.5"/>
+</svg>

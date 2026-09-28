@@ -1,0 +1,766 @@
+/* Homepage — premium visual refresh (layout/UX inspired by industry-standard
+   agency homepages; all copy, branding, images and services remain GrownowW's own).
+   Scoped additive overrides only; no HTML restructuring of complex positioned
+   sections (hero slider, hexagon "Why Work With Us", process arrows) to avoid
+   disturbing their existing absolute-positioning layout. */
+
+/* ---------- Section rhythm ---------- */
+.who_we_are,
+.work_with_us,
+.our_principle,
+.our_process,
+.what_we_do,
+.home_testimonial {
+    position: relative;
+}
+
+.who_we_are::before,
+.our_principle::before,
+.home_testimonial::before {
+    content: "";
+    display: block;
+    height: 1px;
+    max-width: 1100px;
+    margin: 0 auto 40px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.35), transparent);
+}
+
+/* ---------- Hero slider: typography + CTA polish only ---------- */
+.slider_section h1,
+.slider_section h2 {
+    letter-spacing: 0.2px;
+}
+
+.slider_section .explore,
+.slider_section .get_quote,
+.slider_section .ser_btn {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.slider_section .explore:hover,
+.slider_section .get_quote:hover,
+.slider_section .ser_btn:hover {
+    transform: translateY(-2px);
+}
+
+/* ---------- What We Do — Logo theme & black "What" ---------- */
+.what_we_do {
+    background: radial-gradient(circle at 12% 20%, rgba(212, 175, 55, 0.12) 0%, rgba(255, 255, 255, 0.98) 45%, rgba(212, 175, 55, 0.15) 100%), linear-gradient(135deg, #ffffff 0%, #fffdf4 40%, #fef8e7 100%) !important;
+    border-top: 1px solid rgba(212, 175, 55, 0.25);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.what_we_do .square {
+    background-color: var(--yellow-color) !important;
+}
+
+.what_we_do .title h2 {
+    color: #ffffff !important;
+}
+
+.what_we_do .title h2 .what-word,
+.what_we_do .title .what-word {
+    color: #000000 !important;
+    font-weight: 800 !important;
+}
+
+.what_we_do .title h2 .wedo-word,
+.what_we_do .title .wedo-word {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+.what_we_do .medias .content p {
+    color: #334155;
+    font-weight: 500;
+}
+
+.what_we_do .medias {
+    padding: 18px 10px;
+    border-radius: 16px;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), background 0.4s ease, box-shadow 0.4s ease;
+}
+
+.what_we_do .medias:hover {
+    transform: translateY(-6px);
+    background: rgba(212, 175, 55, 0.06);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+}
+
+.what_we_do .medias .img {
+    transition: transform 0.4s ease;
+}
+
+.what_we_do .medias:hover .img {
+    transform: scale(1.08);
+}
+
+.what_we_do .medias .content p {
+    transition: color 0.3s ease;
+}
+
+.what_we_do .medias:hover .content p {
+    color: #b8891f;
+}
+
+/* ---------- Testimonials ---------- */
+.home_testimonial .testimonial_slider_inner.content_bg {
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.4s ease;
+}
+
+.home_testimonial .testimonial_slider_inner.content_bg:hover {
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+}
+
+/* ---------- FAQ accordion ---------- */
+.faq_section .accordion-item {
+    transition: box-shadow 0.35s ease;
+}
+
+.faq_section .accordion-item:hover {
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08) !important;
+}
+
+.faq_section .accordion-button:not(.collapsed) {
+    color: #0f172a !important;
+    background-color: #fdf8ee !important;
+}
+
+.faq_section .accordion-button:focus {
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25);
+}
+
+/* ---------- Nav active/hover refinement ---------- */
+.navbar .navbar-nav a.main_menu {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar .navbar-nav a.main_menu::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: var(--yellow-color);
+    transition: width 0.3s ease;
+}
+
+.navbar .navbar-nav a.main_menu:hover::after,
+.navbar .navbar-nav a.main_menu.active::after {
+    width: 100%;
+}
+
+/* ---------- Footer refinement ---------- */
+.footer_social .icon {
+    transition: transform 0.3s ease;
+}
+
+.footer_social .icon:hover {
+    transform: translateY(-4px) scale(1.06);
+}
+
+.footer_navbar ul li a {
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer_navbar ul li a:hover {
+    padding-left: 4px;
+}
+
+/* ---------- Reduced-motion & mobile safety ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .what_we_do .medias,
+    .what_we_do .medias .img,
+    .home_testimonial .testimonial_slider_inner.content_bg,
+    .faq_section .accordion-item {
+        transition: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .what_we_do .medias:hover {
+        transform: none;
+    }
+}
+
+/* ---------- Why Work With GrowNoww — 5-slide narrative carousel ---------- */
+.grow_why_slider .slick-track {
+    display: flex;
+}
+
+.grow_why_slider .slick-slide {
+    height: auto;
+}
+
+.grow_slide_inner {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 45px 40px;
+    background: #fff;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 22px;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.07);
+    font-family: var(--poppins);
+}
+
+.grow_slide_num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1e1e1e 0%, #2a2208 100%);
+    color: var(--yellow-color);
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.grow_slide_eyebrow {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #b8891f;
+    margin-bottom: 8px;
+}
+
+.grow_slide_inner h3 {
+    font-weight: 600;
+    font-size: 26px;
+    color: #0f172a;
+    margin-bottom: 20px;
+}
+
+.grow_slide_inner p {
+    font-size: 15.5px;
+    line-height: 1.85;
+    color: #334155;
+    margin-bottom: 14px;
+}
+
+.grow_slide_inner p:last-child {
+    margin-bottom: 0;
+}
+
+.grow_slide_inner .grow_emphasis {
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.grow_slide_inner .grow_quote {
+    font-style: italic;
+    color: #b8891f;
+    border-left: 3px solid var(--yellow-color);
+    padding-left: 16px;
+}
+
+.grow_steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 10px 0 20px;
+}
+
+.grow_step {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 18px;
+}
+
+.grow_step h5 {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: #0f172a;
+    margin-bottom: 6px;
+}
+
+.grow_step p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #475569;
+    margin-bottom: 0;
+}
+
+.grow_why_slider .slick-dots li button:before {
+    color: var(--yellow-color);
+    opacity: 0.4;
+}
+
+.grow_why_slider .slick-dots li.slick-active button:before {
+    opacity: 1;
+    color: var(--yellow-color);
+}
+
+@media (max-width: 768px) {
+    .grow_slide_inner {
+        padding: 30px 22px;
+    }
+    .grow_slide_inner h3 {
+        font-size: 21px;
+    }
+    .grow_steps {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---------- What You Get ---------- */
+.what_you_get {
+    padding: 90px 0;
+    background: #fdfaf3;
+    font-family: var(--poppins);
+}
+
+.wyg_intro {
+    max-width: 760px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.wyg_intro h2 {
+    font-weight: 600;
+    font-size: 32px;
+    color: #0f172a;
+    margin: 8px 0 16px;
+}
+
+.wyg_intro p {
+    color: #475569;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.wyg_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+.wyg_card {
+    background: #fff;
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.05);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+}
+
+.wyg_card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+}
+
+.wyg_num {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--yellow-color);
+    margin-bottom: 8px;
+}
+
+.wyg_label {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #b8891f;
+    margin-bottom: 10px;
+}
+
+.wyg_card h4 {
+    font-weight: 600;
+    font-size: 19px;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.wyg_card p {
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: #475569;
+    margin-bottom: 10px;
+}
+
+.wyg_formula {
+    font-weight: 600;
+    font-size: 13.5px;
+    color: #0f172a !important;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-top: 6px;
+}
+
+.wyg_difference {
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 50px;
+    border-top: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.wyg_difference h3 {
+    font-weight: 600;
+    font-size: 26px;
+    color: #0f172a;
+    margin: 8px 0 16px;
+}
+
+.wyg_difference p {
+    color: #475569;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.wyg_traits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.wyg_traits span {
+    padding: 8px 18px;
+    border-radius: 30px;
+    background: #0f172a;
+    color: var(--yellow-color);
+    font-weight: 600;
+    font-size: 13.5px;
+}
+
+.wyg_tagline {
+    font-weight: 700;
+    font-size: 18px;
+    color: #0f172a !important;
+}
+
+@media (max-width: 768px) {
+    .what_you_get {
+        padding: 60px 0;
+    }
+    .wyg_intro h2 {
+        font-size: 25px;
+    }
+}
+
+/* ---------- Our Process — storytelling zigzag path, pastel quadrant backdrop ---------- */
+.our_process.new_process.process_journey {
+    position: relative;
+    background: #fdfcf9;
+    padding: 100px 0;
+    font-family: var(--poppins);
+    overflow: hidden;
+}
+
+.our_process.new_process .title {
+    display: none;
+}
+
+.process_journey_bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.pj_blob {
+    position: absolute;
+    width: 46vw;
+    height: 46vw;
+    max-width: 620px;
+    max-height: 620px;
+    border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
+    filter: blur(6px);
+    opacity: 0.35;
+}
+.pj_blob_green  { top: -12%; left: -10%; background: #bfe3c7; }
+.pj_blob_pink   { top: -14%; right: -12%; background: #f3c9c3; border-radius: 58% 42% 37% 63% / 55% 44% 56% 45%; }
+.pj_blob_blue   { bottom: -16%; right: -8%; background: #c3d9f3; }
+.pj_blob_yellow { bottom: -14%; left: -10%; background: #f5e3ae; border-radius: 63% 37% 42% 58% / 45% 55% 45% 55%; }
+
+.process_vertical_label {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    writing-mode: vertical-rl;
+    letter-spacing: 6px;
+    font-weight: 800;
+    font-size: 30px;
+    color: rgba(18, 18, 18, 0.85);
+    display: flex;
+}
+.process_vertical_label span { transform: rotate(180deg); }
+
+.our_process.new_process.process_journey .container {
+    position: relative;
+    z-index: 1;
+}
+
+.process_journey .process_intro {
+    max-width: 780px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.process_journey .process_intro h2 {
+    font-weight: 700;
+    font-size: 34px;
+    color: #14171c;
+    margin: 8px 0 16px;
+}
+
+.process_journey .process_intro p {
+    color: #4a4a4a;
+    line-height: 1.8;
+}
+
+.process_journey .grow_slide_eyebrow {
+    color: var(--yellow-color);
+}
+
+.process_path {
+    position: relative;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 10px 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+.process_path_line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+.process_path_line path {
+    fill: none;
+    stroke: rgba(18, 18, 18, 0.5);
+    stroke-width: 2;
+    stroke-dasharray: 2 10;
+    stroke-linecap: round;
+}
+
+.process_step {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: 22px;
+    max-width: 62%;
+}
+
+.process_step.step_left { align-self: flex-start; }
+.process_step.step_right {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+.process_step.step_right .process_step_text { text-align: right; }
+
+.process_step_icon {
+    flex: 0 0 auto;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    box-shadow: 0 10px 26px rgba(18, 18, 18, 0.1);
+    color: #14171c;
+}
+.process_step_icon svg { width: 30px; height: 30px; }
+
+.step_1 .process_step_icon { background: #d7ecdb; }
+.step_2 .process_step_icon { background: #f6dad3; }
+.step_3 .process_step_icon { background: #fbe9b8; }
+.step_4 .process_step_icon { background: #d3e2f8; }
+.step_5 .process_step_icon { background: #f6dad3; }
+.step_6 .process_step_icon { background: #d7ecdb; }
+
+.process_num {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--yellow-color);
+    margin-bottom: 4px;
+}
+
+.process_label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #14171c;
+    opacity: 0.7;
+    margin-bottom: 6px;
+}
+
+.process_step_text h4 {
+    font-weight: 700;
+    font-size: 19px;
+    color: #14171c;
+    margin-bottom: 8px;
+}
+
+.process_emphasis {
+    font-weight: 600;
+    color: #4a4a4a !important;
+    margin: 0;
+}
+
+.process_explore {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin-top: 10px;
+}
+.process_explore p {
+    font-weight: 600;
+    color: #14171c;
+    margin-bottom: 6px;
+}
+.process_explore_link {
+    color: #e0472c;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+.process_explore_link:hover { color: #b8341f; }
+
+.process_method {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+    margin: 70px auto 0;
+    text-align: center;
+    padding-top: 50px;
+    border-top: 1px solid rgba(18, 18, 18, 0.12);
+}
+
+.process_method h3 {
+    font-weight: 700;
+    font-size: 22px;
+    color: #14171c;
+    margin: 8px 0 16px;
+    letter-spacing: 0.3px;
+}
+
+.process_method p {
+    color: #4a4a4a;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.process_cta {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 14px 28px;
+    border-radius: 30px;
+    background: var(--yellow-color);
+    color: #14171c;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process_cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(212, 175, 55, 0.35);
+    color: #14171c;
+}
+
+@media (max-width: 992px) {
+    .process_vertical_label { display: none; }
+    .process_path_line { display: none; }
+    .process_step,
+    .process_step.step_right {
+        max-width: 100%;
+        flex-direction: row;
+        align-self: stretch;
+    }
+    .process_step.step_right .process_step_text { text-align: left; }
+}
+
+@media (max-width: 768px) {
+    .our_process.new_process.process_journey {
+        padding: 60px 0;
+    }
+    .process_journey .process_intro h2 {
+        font-size: 24px;
+    }
+    .process_step { gap: 16px; }
+    .process_step_icon { width: 52px; height: 52px; }
+    .process_step_icon svg { width: 24px; height: 24px; }
+}
+
+/* ---------- Testimonial intro copy ---------- */
+.testimonial_intro {
+    max-width: 720px;
+    margin: 0 auto 40px;
+    text-align: center;
+    font-family: var(--poppins);
+}
+
+.testimonial_intro h2 {
+    font-weight: 600;
+    font-size: 28px;
+    color: #0f172a;
+    margin: 8px 0 14px;
+}
+
+.testimonial_intro p {
+    color: #475569;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.testimonial_tagline {
+    font-weight: 700;
+    color: #0f172a !important;
+}
+
+/* ---------- Who We Are — company overview copy ---------- */
+.who_we_are_copy {
+    max-width: 780px;
+    margin: 0 auto 40px;
+    text-align: center;
+    font-family: var(--poppins);
+}
+
+.who_we_are_copy h3 {
+    font-weight: 600;
+    font-size: 26px;
+    color: #0f172a;
+    margin: 8px 0 16px;
+}
+
+.who_we_are_copy p {
+    color: #475569;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.who_we_are_copy .who_we_are_emphasis {
+    font-weight: 700;
+    color: #0f172a;
+}

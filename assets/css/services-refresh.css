@@ -1,0 +1,260 @@
+/* Services page — subtle premium visual refresh.
+   Scoped additive overrides only; no HTML/content changes.
+   Loaded after custom.css so these rules win on specificity/order. */
+
+/* ---------- Hero ---------- */
+.service_title {
+    padding-top: 40px;
+    padding-bottom: 15%;
+    position: relative;
+}
+
+.service_title h1.sizess {
+    letter-spacing: 0.3px;
+    margin-top: 6px;
+}
+
+.service_title p {
+    max-width: 720px;
+    margin: 18px auto 0;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+.service_title .scroll_down {
+    transition: transform 0.3s ease;
+}
+
+.service_title .scroll_down:hover {
+    transform: translateY(4px);
+}
+
+/* Fix: h2:nth-child(3) and the "Brand" <span> were set to white (#fff) in
+   style.css, invisible against this section's light background — making
+   most of the hero heading unreadable. Restore visibility without touching
+   the wording or layout. */
+.service_title h2,
+.service_title h2:nth-child(3) {
+    color: #0f172a !important;
+}
+
+.service_title h2 span {
+    color: #b8891f !important;
+}
+
+/* ---------- Service cards ---------- */
+.service_section .row .service_card {
+    border-radius: 18px;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease, border-color 0.45s ease;
+    overflow: hidden;
+}
+
+.service_section .row .service_card:hover,
+.service_section .row .service_card.mob_app:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.14);
+    border-color: rgba(212, 175, 55, 0.45);
+}
+
+.service_section .service_card .img {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.service_section .service_card .img img {
+    transition: transform 0.6s ease;
+}
+
+.service_section .row .service_card:hover .img img {
+    transform: scale(1.04);
+}
+
+.service_section .content h2 {
+    letter-spacing: 0.2px;
+}
+
+.service_section .content p {
+    line-height: 1.75;
+}
+
+/* Buttons */
+.service_section .button_group .ser_btn {
+    border-radius: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service_section .button_group .ser_btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* ---------- Graphic design split section ---------- */
+.graphic_section .row {
+    border-radius: 18px;
+    border: 1px solid rgba(212, 175, 55, 0.12);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.45s ease, border-color 0.45s ease;
+}
+
+.graphic_section .row:hover {
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+    border-color: rgba(212, 175, 55, 0.4);
+}
+
+.graphic_section.service_section .img {
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.graphic_section.service_section .img img {
+    border-radius: 14px;
+    transition: transform 0.6s ease;
+}
+
+.graphic_section .row:hover .img img {
+    transform: scale(1.03);
+}
+
+/* ---------- Logo / brochure grid ---------- */
+.cat_graphic_section {
+    padding: 10px 0 20px;
+}
+
+.cat_graphic_section .img {
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.cat_graphic_section .img:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.16);
+}
+
+.cat_graphic_section .img img {
+    transition: transform 0.6s ease;
+}
+
+.cat_graphic_section .img:hover img {
+    transform: scale(1.05);
+}
+
+/* ---------- Section transitions ---------- */
+.website_section.service_section {
+    position: relative;
+}
+
+.graphic_section,
+.seo_section.service_section,
+.cat_graphic_section {
+    position: relative;
+}
+
+.graphic_section::before,
+.seo_section.service_section::before {
+    content: "";
+    display: block;
+    height: 1px;
+    max-width: 1100px;
+    margin: 0 auto 40px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.35), transparent);
+}
+
+/* ---------- CTA band ---------- */
+.evolving_section {
+    background: linear-gradient(135deg, #ef3100 0%, #d92900 100%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.evolving_section .contact_us button {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.evolving_section .contact_us button:hover {
+    transform: translateY(-2px);
+}
+
+/* ---------- FAQ accordion ---------- */
+.faq_section .accordion-item {
+    transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.faq_section .accordion-item:hover {
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08) !important;
+}
+
+.faq_section .accordion-button:not(.collapsed) {
+    color: #0f172a !important;
+    background-color: #fdf8ee !important;
+}
+
+.faq_section .accordion-button:focus {
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25);
+}
+
+/* ---------- Nav active/hover refinement (services.html only) ---------- */
+.navbar .navbar-nav a.main_menu {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar .navbar-nav a.main_menu::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: var(--yellow-color);
+    transition: width 0.3s ease;
+}
+
+.navbar .navbar-nav a.main_menu:hover::after,
+.navbar .navbar-nav a.main_menu.active::after {
+    width: 100%;
+}
+
+/* ---------- Footer refinement ---------- */
+.footer_social .icon {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer_social .icon:hover {
+    transform: translateY(-4px) scale(1.06);
+}
+
+.footer_navbar ul li a {
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer_navbar ul li a:hover {
+    padding-left: 4px;
+}
+
+/* ---------- Reduced-motion & mobile safety ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .service_section .row .service_card,
+    .service_section .service_card .img img,
+    .graphic_section .row,
+    .graphic_section.service_section .img img,
+    .cat_graphic_section .img,
+    .cat_graphic_section .img img,
+    .evolving_section .contact_us button,
+    .faq_section .accordion-item {
+        transition: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .service_section .row .service_card:hover,
+    .service_section .row .service_card.mob_app:hover {
+        transform: none;
+    }
+    .cat_graphic_section .img:hover {
+        transform: none;
+    }
+}

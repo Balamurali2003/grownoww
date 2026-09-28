@@ -1,0 +1,28 @@
+<svg width="120" height="90" viewBox="0 0 120 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Steam from Left Mug -->
+  <path d="M38 18 C35 12, 42 8, 38 2" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 2"/>
+  <path d="M46 16 C43 10, 50 6, 47 2" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 2"/>
+  
+  <!-- Steam from Right Mug -->
+  <path d="M72 16 C69 10, 76 6, 73 2" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 2"/>
+  <path d="M80 18 C77 12, 84 8, 81 2" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 2"/>
+
+  <!-- Left Coffee Mug -->
+  <path d="M28 26 L55 26 L52 70 C51 76, 45 80, 39 80 L36 80 C30 80, 25 76, 25 70 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Left Handle -->
+  <path d="M25 35 C15 35, 12 55, 26 58" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
+  
+  <!-- GrownowW 'W' Logo on Left Mug in Gold -->
+  <path d="M32 45 L36 60 L40 48 L44 60 L48 45" stroke="#FAA300" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Right Coffee Mug -->
+  <path d="M65 26 L92 26 L95 70 C95 76, 90 80, 84 80 L81 80 C75 80, 69 76, 68 70 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Right Handle -->
+  <path d="M95 35 C105 35, 108 55, 94 58" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- GrownowW 'W' Logo on Right Mug in Gold -->
+  <path d="M72 45 L76 60 L80 48 L84 60 L88 45" stroke="#FAA300" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Toast Clink Spark -->
+  <path d="M60 20 L60 26 M55 22 L65 24" stroke="#FAA300" stroke-width="2" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,30 @@
+<svg width="110" height="90" viewBox="0 0 110 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Central Hub with GrownowW Logo -->
+  <circle cx="55" cy="45" r="18" fill="#FFF8DC" stroke="#1A1A1A" stroke-width="2.5"/>
+  <path d="M47 40 L50 50 L55 42 L60 50 L63 40" stroke="#FAA300" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Satellite Nodes & Branches -->
+  <!-- Top Node: PLAN -->
+  <line x1="55" y1="27" x2="55" y2="14" stroke="#1A1A1A" stroke-width="2" stroke-dasharray="3 2"/>
+  <rect x="42" y="4" width="26" height="12" rx="3" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.8"/>
+  <text x="55" y="13" font-size="7" font-family="sans-serif" font-weight="bold" fill="#1A1A1A" text-anchor="middle">PLAN</text>
+
+  <!-- Left Node: STRATEGY -->
+  <line x1="37" y1="45" x2="22" y2="45" stroke="#1A1A1A" stroke-width="2" stroke-dasharray="3 2"/>
+  <rect x="2" y="38" width="22" height="14" rx="3" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.8"/>
+  <circle cx="13" cy="45" r="4" fill="#FAA300"/>
+
+  <!-- Right Node: ROADMAP -->
+  <line x1="73" y1="45" x2="88" y2="45" stroke="#1A1A1A" stroke-width="2" stroke-dasharray="3 2"/>
+  <rect x="86" y="38" width="22" height="14" rx="3" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.8"/>
+  <path d="M90 45 L94 42 L98 47 L104 40" stroke="#FAA300" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Bottom Nodes: UI & TECH -->
+  <line x1="43" y1="58" x2="30" y2="72" stroke="#1A1A1A" stroke-width="2" stroke-dasharray="3 2"/>
+  <rect x="18" y="70" width="24" height="14" rx="3" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.8"/>
+  <text x="30" y="80" font-size="6.5" font-family="sans-serif" font-weight="bold" fill="#1A1A1A" text-anchor="middle">TECH</text>
+
+  <line x1="67" y1="58" x2="80" y2="72" stroke="#1A1A1A" stroke-width="2" stroke-dasharray="3 2"/>
+  <rect x="70" y="70" width="24" height="14" rx="3" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.8"/>
+  <text x="82" y="80" font-size="6.5" font-family="sans-serif" font-weight="bold" fill="#1A1A1A" text-anchor="middle">GROWTH</text>
+</svg>

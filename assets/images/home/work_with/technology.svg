@@ -1,0 +1,50 @@
+<svg width="1280" height="221" viewBox="0 0 1280 221" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Horizontal continuous baseline across entire canvas -->
+  <line x1="0" y1="217" x2="470" y2="217" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="810" y1="217" x2="1280" y2="217" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Gold/Yellow Accent fills -->
+  <polygon points="610,120 670,120 660,155 600,155" fill="#FAA300" opacity="0.95"/>
+  <circle cx="640" cy="50" r="22" fill="#FAA300" opacity="0.9"/>
+  <rect x="710" y="95" width="55" height="40" rx="4" fill="#FAA300" opacity="0.85"/>
+
+  <!-- Left Developer / Architect at Workstation -->
+  <path d="M470 217 C475 198, 482 175, 492 150 C500 132, 510 115, 518 95 C522 85, 528 78, 536 75 C545 72, 554 75, 558 84 C562 95, 558 112, 550 130 C542 148, 535 178, 528 217" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Left Head -->
+  <path d="M532 65 C528 56, 532 45, 540 40 C548 36, 558 38, 562 46 C566 54, 564 64, 556 70 C548 74, 538 72, 532 65 Z" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  <path d="M534 45 C540 34, 555 34, 562 42 C564 48, 562 55, 558 60" stroke="#1A1A1A" stroke-width="2.2" stroke-linecap="round"/>
+
+  <!-- Arms Typing on Laptop -->
+  <path d="M542 90 C558 98, 580 110, 598 122 C605 126, 610 122, 608 115 C602 105, 585 95, 570 88" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  <path d="M530 110 C545 118, 570 128, 592 135 C600 138, 605 130, 600 122 C590 110, 565 100, 550 95" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Laptop & Floating Code Tags in Center -->
+  <polygon points="610,120 670,120 660,155 600,155" stroke="#1A1A1A" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M585 155 L675 155 L685 162 L575 162 Z" stroke="#1A1A1A" stroke-width="2" fill="#FFFFFF"/>
+  <path d="M625 135 L618 140 L625 145 M645 135 L652 140 L645 145 M638 132 L632 148" stroke="#1A1A1A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Floating Cloud / Architecture Nodes -->
+  <circle cx="640" cy="50" r="22" stroke="#1A1A1A" stroke-width="2"/>
+  <path d="M630 50 C630 42, 636 38, 644 40 C650 38, 656 42, 656 48 C660 48, 662 52, 660 56 C658 60, 632 60, 630 50 Z" stroke="#1A1A1A" stroke-width="1.6" fill="#FFFFFF"/>
+  <line x1="640" y1="72" x2="640" y2="100" stroke="#FAA300" stroke-width="2" stroke-dasharray="3 3"/>
+  <line x1="620" y1="65" x2="590" y2="85" stroke="#1A1A1A" stroke-width="1.5" stroke-dasharray="2 2"/>
+  <line x1="660" y1="65" x2="690" y2="85" stroke="#1A1A1A" stroke-width="1.5" stroke-dasharray="2 2"/>
+
+  <!-- Right Engineer / Tech Lead with Holographic Screen -->
+  <path d="M690 68 C685 58, 689 46, 698 42 C706 38, 716 40, 720 48 C724 56, 722 66, 714 72 C706 76, 696 74, 690 68 Z" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  <path d="M692 48 C698 36, 714 36, 720 44 C723 50, 721 58, 717 62" stroke="#1A1A1A" stroke-width="2.2" stroke-linecap="round"/>
+
+  <path d="M685 82 C672 98, 662 120, 658 145 C655 165, 660 190, 668 217" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  <path d="M718 82 C732 98, 748 122, 762 150 C772 175, 782 198, 788 217" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Right Hands Interacting with Digital Dashboard -->
+  <path d="M698 95 C712 108, 730 115, 748 118 C755 118, 760 110, 755 102 C745 92, 728 86, 715 82" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  <rect x="710" y="95" width="55" height="40" rx="4" stroke="#1A1A1A" stroke-width="1.8"/>
+  <line x1="718" y1="108" x2="755" y2="108" stroke="#1A1A1A" stroke-width="1.5"/>
+  <line x1="718" y1="116" x2="745" y2="116" stroke="#1A1A1A" stroke-width="1.5"/>
+  <line x1="718" y1="124" x2="735" y2="124" stroke="#1A1A1A" stroke-width="1.5"/>
+
+  <!-- Connected Ground Line in center -->
+  <path d="M528 217 L668 217 M788 217 L810 217" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

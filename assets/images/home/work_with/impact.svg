@@ -1,0 +1,52 @@
+<svg width="1280" height="221" viewBox="0 0 1280 221" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Horizontal continuous baseline across entire canvas -->
+  <line x1="0" y1="217" x2="475" y2="217" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="805" y1="217" x2="1280" y2="217" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Gold/Yellow Accent fills -->
+  <circle cx="640" cy="55" r="28" fill="#FAA300" opacity="0.9"/>
+  <polygon points="535,115 575,100 585,140 545,155" fill="#FAA300" opacity="0.95"/>
+  <rect x="695" y="105" width="50" height="58" rx="4" fill="#FAA300" opacity="0.9"/>
+
+  <!-- Left Strategist Analyzing Target -->
+  <path d="M475 217 C482 195, 490 170, 498 145 C506 128, 514 108, 520 88 C524 78, 532 72, 540 70 C548 68, 558 72, 562 82 C566 92, 560 112, 552 135 C545 158, 538 188, 530 217" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Left Head -->
+  <path d="M536 60 C532 50, 536 38, 545 34 C554 30, 564 32, 568 40 C572 48, 570 58, 562 64 C554 68, 544 66, 536 60 Z" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  <path d="M538 40 C545 28, 560 28, 568 36 C570 42, 568 50, 564 55" stroke="#1A1A1A" stroke-width="2.2" stroke-linecap="round"/>
+
+  <!-- Left Hand pointing toward target -->
+  <path d="M545 85 C565 92, 588 95, 608 92 C615 90, 620 85, 615 78 C605 70, 582 72, 565 75" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  <path d="M535 105 C550 115, 570 125, 590 130 C598 132, 602 125, 598 118 C585 108, 560 100, 545 95" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Center High-Impact Target & Conversion Funnel -->
+  <circle cx="640" cy="55" r="28" stroke="#1A1A1A" stroke-width="2"/>
+  <circle cx="640" cy="55" r="18" stroke="#1A1A1A" stroke-width="1.8" fill="#FFFFFF"/>
+  <circle cx="640" cy="55" r="8" fill="#1A1A1A"/>
+  
+  <!-- Arrow striking bullseye -->
+  <line x1="590" y1="90" x2="635" y2="58" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
+  <polygon points="632,54 642,54 638,64" fill="#FAA300"/>
+
+  <!-- Metric Charts below target -->
+  <path d="M605 140 L620 120 L640 130 L665 105 L675 112" stroke="#1A1A1A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="665" cy="105" r="4" fill="#FAA300" stroke="#1A1A1A" stroke-width="1.5"/>
+  <line x1="600" y1="150" x2="680" y2="150" stroke="#1A1A1A" stroke-width="1.8"/>
+
+  <!-- Right Business Executive Validating ROI -->
+  <path d="M690 62 C685 52, 689 40, 698 36 C706 32, 716 34, 720 42 C724 50, 722 60, 714 66 C706 70, 696 68, 690 62 Z" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  <path d="M692 42 C698 30, 714 30, 720 38 C723 44, 721 52, 717 56" stroke="#1A1A1A" stroke-width="2.2" stroke-linecap="round"/>
+
+  <path d="M685 75 C672 90, 660 115, 655 140 C650 162, 656 190, 665 217" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  <path d="M718 75 C732 92, 748 118, 762 145 C772 170, 780 195, 785 217" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Right Hands holding KPI board -->
+  <path d="M698 88 C712 100, 728 108, 745 110 C752 110, 756 102, 752 95 C742 85, 725 80, 712 76" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  <rect x="695" y="105" width="50" height="58" rx="4" stroke="#1A1A1A" stroke-width="1.8"/>
+  <line x1="705" y1="120" x2="735" y2="120" stroke="#1A1A1A" stroke-width="1.5"/>
+  <line x1="705" y1="130" x2="730" y2="130" stroke="#1A1A1A" stroke-width="1.5"/>
+  <line x1="705" y1="140" x2="735" y2="140" stroke="#1A1A1A" stroke-width="1.5"/>
+
+  <!-- Connected Ground Line in center -->
+  <path d="M530 217 L665 217 M785 217 L805 217" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

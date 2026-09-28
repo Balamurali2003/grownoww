@@ -1,0 +1,6 @@
+<svg width="80" height="70" viewBox="0 0 80 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Curved Hand-Drawn Arrow sweeping left from Step 03/04 -->
+  <path d="M70 10 C45 10, 15 25, 15 58" stroke="#1A1A1A" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- Arrowhead pointing left/down -->
+  <path d="M8 50 L14 60 L22 52" stroke="#1A1A1A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

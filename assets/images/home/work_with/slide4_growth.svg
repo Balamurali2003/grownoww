@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="neonGoldGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE600" />
+      <stop offset="100%" stop-color="#D4AF37" />
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="54" fill="#FFFDF0" stroke="#FFE600" stroke-width="3"/>
+  <!-- Growth trend line and rocket -->
+  <path d="M 28 85 L 48 65 L 68 75 L 92 38" fill="none" stroke="#D4AF37" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="28" cy="85" r="5" fill="#FFE600" stroke="#1A1A1A" stroke-width="2"/>
+  <circle cx="48" cy="65" r="5" fill="#FFE600" stroke="#1A1A1A" stroke-width="2"/>
+  <circle cx="68" cy="75" r="5" fill="#FFE600" stroke="#1A1A1A" stroke-width="2"/>
+  <circle cx="92" cy="38" r="7" fill="url(#neonGoldGlow)" stroke="#1A1A1A" stroke-width="2"/>
+  <polygon points="90,26 100,36 88,40" fill="#1A1A1A"/>
+</svg>

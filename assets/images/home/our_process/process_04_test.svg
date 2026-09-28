@@ -1,0 +1,27 @@
+<svg width="120" height="90" viewBox="0 0 120 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Testing Monitor / Screen -->
+  <rect x="15" y="10" width="70" height="55" rx="4" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2.5"/>
+  <line x1="15" y1="22" x2="85" y2="22" stroke="#1A1A1A" stroke-width="1.8"/>
+  <circle cx="22" cy="16" r="2" fill="#FAA300"/>
+  <circle cx="28" cy="16" r="2" fill="#1A1A1A"/>
+  
+  <!-- Stand -->
+  <path d="M45 65 L45 75 L35 75 L35 80 L65 80 L65 75 L55 75 L55 65" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+
+  <!-- Code / Metrics Lines inside Monitor -->
+  <line x1="22" y1="30" x2="48" y2="30" stroke="#1A1A1A" stroke-width="2"/>
+  <line x1="22" y1="38" x2="42" y2="38" stroke="#1A1A1A" stroke-width="2"/>
+  <line x1="22" y1="46" x2="52" y2="46" stroke="#1A1A1A" stroke-width="2"/>
+  
+  <!-- Passed / Verified Badge with GrownowW Gold Accent -->
+  <rect x="58" y="28" width="20" height="24" rx="3" fill="#FFFDF0" stroke="#FAA300" stroke-width="1.8"/>
+  <path d="M62 38 L66 44 L74 34" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Magnifying Glass Inspecting Screen -->
+  <circle cx="82" cy="48" r="20" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2.8"/>
+  <circle cx="82" cy="48" r="14" fill="#FFF8DC" stroke="#FAA300" stroke-width="1.5"/>
+  <!-- GrownowW 'W' Logo inside Magnifier -->
+  <path d="M74 44 L78 52 L82 46 L86 52 L90 44" stroke="#FAA300" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Magnifier Handle -->
+  <line x1="97" y1="62" x2="114" y2="78" stroke="#1A1A1A" stroke-width="4.5" stroke-linecap="round"/>
+</svg>

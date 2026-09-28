@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617" />
+      <stop offset="60%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e3a8a" />
+    </linearGradient>
+    <linearGradient id="blueIce" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg5)" rx="24"/>
+  <circle cx="200" cy="250" r="240" fill="url(#blueIce)" opacity="0.2"/>
+
+  <!-- Header Badge -->
+  <rect x="80" y="70" width="210" height="34" rx="17" fill="rgba(56,189,248,0.15)" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="185" y="93" fill="#38bdf8" font-family="'Inter', sans-serif" font-size="13" font-weight="700" text-anchor="middle" letter-spacing="2">EDITORIAL &amp; DECK</text>
+  <text x="720" y="93" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="13" font-weight="600" text-anchor="end">CORPORATE SUITE</text>
+
+  <!-- Corporate Pitch Deck Mockup -->
+  <g transform="translate(140, 180)">
+    <!-- Left panel -->
+    <polygon points="40,60 180,30 180,410 40,440" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+    <text x="110" y="240" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="14" font-weight="700" text-anchor="middle" transform="rotate(-12, 110, 240)">SERVICES</text>
+
+    <!-- Center panel -->
+    <polygon points="180,30 340,30 340,410 180,410" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+    <circle cx="260" cy="140" r="40" fill="url(#blueIce)"/>
+    <text x="260" y="148" fill="#ffffff" font-family="'Outfit', sans-serif" font-size="24" font-weight="900" text-anchor="middle">G</text>
+    <text x="260" y="230" fill="#ffffff" font-family="'Outfit', sans-serif" font-size="22" font-weight="800" text-anchor="middle">ANNUAL REPORT</text>
+    <text x="260" y="260" fill="#38bdf8" font-family="'Inter', sans-serif" font-size="14" font-weight="600" text-anchor="middle">2026 EDITION</text>
+
+    <!-- Right panel -->
+    <polygon points="340,30 480,60 480,440 340,410" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+    <text x="410" y="240" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="14" font-weight="700" text-anchor="middle" transform="rotate(12, 410, 240)">GLOBAL</text>
+  </g>
+
+  <!-- Typography & Story -->
+  <text x="80" y="720" fill="#ffffff" font-family="'Outfit', 'Inter', sans-serif" font-size="50" font-weight="900" letter-spacing="-1">CORPORATE PROFILE</text>
+  <text x="80" y="768" fill="#38bdf8" font-family="'Outfit', 'Inter', sans-serif" font-size="30" font-weight="700">Executive Pitch Deck &amp; Reports</text>
+  <text x="80" y="820" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="17">
+    <tspan x="80" dy="0">High-impact corporate literature, annual investor decks, and</tspan>
+    <tspan x="80" dy="26">sales collateral engineered for enterprise deal closures.</tspan>
+  </text>
+
+  <!-- Bottom Details -->
+  <line x1="80" y1="915" x2="720" y2="915" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="80" y="955" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="14" font-weight="600">DELIVERABLES: PITCH DECK • ANNUAL REPORT • INFOGRAPHICS</text>
+  <text x="720" y="955" fill="#38bdf8" font-family="'Inter', sans-serif" font-size="14" font-weight="800" text-anchor="end">VIEW DECK →</text>
+</svg>

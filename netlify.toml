@@ -1,0 +1,68 @@
+[build]
+  publish = "."
+
+# Primary Redirects for Netlify
+[[redirects]]
+  from = "/"
+  to = "/pages/index.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services"
+  to = "/pages/services.html"
+  status = 301
+
+[[redirects]]
+  from = "/work"
+  to = "/pages/works.html"
+  status = 301
+
+[[redirects]]
+  from = "/works"
+  to = "/pages/works.html"
+  status = 301
+
+[[redirects]]
+  from = "/about"
+  to = "/pages/aboutus.html"
+  status = 301
+
+[[redirects]]
+  from = "/aboutus"
+  to = "/pages/aboutus.html"
+  status = 301
+
+[[redirects]]
+  from = "/careers"
+  to = "/pages/careers.html"
+  status = 301
+
+[[redirects]]
+  from = "/contact"
+  to = "/pages/contact.html"
+  status = 301
+
+[[redirects]]
+  from = "/case-study"
+  to = "/pages/case-study.html"
+  status = 301
+
+[[redirects]]
+  from = "/privacy-policy"
+  to = "/pages/privacy_policy.html"
+  status = 301
+
+# Optimized Caching and Security Headers
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
