@@ -374,11 +374,32 @@ document.addEventListener('DOMContentLoaded', function () {
     // Handle "BOOK THIS SERVICE" CTA clicks to prefill modal service dropdown
     const bookButtons = heroShowcase.querySelectorAll('.hero-showcase-cta');
     const modalServiceInput = document.getElementById('hidden_service_popup');
+    const modalServiceSelect = document.getElementById('modalServiceSelect');
+
+    if (modalServiceSelect && modalServiceInput) {
+      modalServiceSelect.addEventListener('change', function () {
+        modalServiceInput.value = this.value;
+      });
+    }
+
     bookButtons.forEach(btn => {
       btn.addEventListener('click', function () {
         const serviceName = btn.getAttribute('data-service');
         if (modalServiceInput && serviceName) {
           modalServiceInput.value = serviceName;
+        }
+        if (modalServiceSelect && serviceName) {
+          let found = false;
+          for (let i = 0; i < modalServiceSelect.options.length; i++) {
+            if (modalServiceSelect.options[i].value === serviceName) {
+              modalServiceSelect.selectedIndex = i;
+              found = true;
+              break;
+            }
+          }
+          if (!found) {
+            modalServiceSelect.value = serviceName;
+          }
         }
       });
     });
@@ -494,4 +515,50 @@ document.addEventListener('DOMContentLoaded', function () {
 
     updateFaqControls(0);
   }
+
+  // 10. Gold Accent Line Reveal on Scroll & Staggered Card Entrances
+  const accentLines = document.querySelectorAll('.gold-accent-line');
+  if (accentLines.length && 'IntersectionObserver' in window) {
+    const lineObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -20px 0px' });
+
+    accentLines.forEach(line => lineObserver.observe(line));
+  } else {
+    accentLines.forEach(line => line.classList.add('in-view'));
+  }
+
+  // Staggered reveal for cards (0ms, 100ms, 200ms, 300ms)
+  const animCards = document.querySelectorAll('.result-box, .timeline-card, .process-step-node, .featured-project-card');
+  if (animCards.length && 'IntersectionObserver' in window) {
+    const cardObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const parent = entry.target.parentElement;
+          const siblings = parent ? Array.from(parent.children) : [];
+          const idx = siblings.indexOf(entry.target.closest('.col-md-6, .col-lg-3, .col-lg-4, .col-sm-6') || entry.target);
+          const delay = (idx >= 0 ? idx % 4 : 0) * 100;
+          setTimeout(() => {
+            entry.target.classList.add('revealed');
+          }, delay);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+    animCards.forEach(card => cardObserver.observe(card));
+  } else {
+    animCards.forEach(card => card.classList.add('revealed'));
+  }
+
+  // Safety fallback after 1.5s
+  setTimeout(() => {
+    accentLines.forEach(line => line.classList.add('in-view'));
+    animCards.forEach(card => card.classList.add('revealed'));
+  }, 1500);
 });
