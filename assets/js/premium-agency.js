@@ -2,8 +2,7 @@
  * GrowNoww Premium Agency Interactive Scripts
  * Black + White + Gold Experience
  */
-
-document.addEventListener('DOMContentLoaded', function () {
+function initPremiumAgency() {
   // 1. Header scroll effect
   const header = document.querySelector('.premium-header');
   if (header) {
@@ -275,9 +274,12 @@ document.addEventListener('DOMContentLoaded', function () {
     startAutoPlay();
   }
 
-  // 8. Hero 9-Service Showcase Slideshow (Automatic 3.2s Rotation + Interactive Controls)
-  const heroSlideshow = document.getElementById('heroServiceSlideshow');
-  if (heroSlideshow) {
+  // 8. Hero 9-Service Showcase Slideshow (Automatic 3s Rotation + Interactive Controls)
+  function setupHeroSlideshow() {
+    const heroSlideshow = document.getElementById('heroServiceSlideshow');
+    if (!heroSlideshow || heroSlideshow.dataset.initialized === 'true') return;
+    heroSlideshow.dataset.initialized = 'true';
+
     const slides = heroSlideshow.querySelectorAll('.hero-service-slide');
     const dots = heroSlideshow.querySelectorAll('.slideshow-dot');
     const prevBtn = document.getElementById('heroSlidePrev');
@@ -286,6 +288,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let currentIndex = 0;
     let slideTimer = null;
+    let hoverTimeout = null;
 
     function goToSlide(index) {
       if (totalSlides === 0) return;
@@ -324,7 +327,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function startTimer() {
       stopTimer();
-      slideTimer = setInterval(nextSlide, 3200);
+      slideTimer = setInterval(nextSlide, 3000);
     }
 
     function stopTimer() {
@@ -343,6 +346,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (nextBtn) {
       nextBtn.addEventListener('click', function (e) {
         e.preventDefault();
+        e.stopPropagation();
         nextSlide();
         resetTimer();
       });
@@ -351,6 +355,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (prevBtn) {
       prevBtn.addEventListener('click', function (e) {
         e.preventDefault();
+        e.stopPropagation();
         prevSlide();
         resetTimer();
       });
@@ -360,6 +365,7 @@ document.addEventListener('DOMContentLoaded', function () {
     dots.forEach((dot) => {
       dot.addEventListener('click', function (e) {
         e.preventDefault();
+        e.stopPropagation();
         const targetIndex = parseInt(this.getAttribute('data-index'), 10);
         if (!isNaN(targetIndex)) {
           goToSlide(targetIndex);
@@ -368,9 +374,16 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
 
-    // Pause on mouse hover, resume on mouse leave
-    heroSlideshow.addEventListener('mouseenter', stopTimer);
-    heroSlideshow.addEventListener('mouseleave', startTimer);
+    // Pause briefly on hover, then resume automatically so it never freezes
+    heroSlideshow.addEventListener('mouseenter', function() {
+      stopTimer();
+      clearTimeout(hoverTimeout);
+      hoverTimeout = setTimeout(startTimer, 3500);
+    });
+    heroSlideshow.addEventListener('mouseleave', function() {
+      clearTimeout(hoverTimeout);
+      startTimer();
+    });
 
     // Mobile touch gestures
     let touchStartX = 0;
@@ -402,7 +415,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Handle "Explore" and "Details" button prefill
     const exploreButtons = heroSlideshow.querySelectorAll('.slide-explore-btn');
     const modalServiceInput = document.getElementById('hidden_service_popup');
-    const modalServiceSelect = document.getElementById('modalServiceSelect');
     exploreButtons.forEach(btn => {
       btn.addEventListener('click', function () {
         const slide = this.closest('.hero-service-slide');
@@ -417,6 +429,9 @@ document.addEventListener('DOMContentLoaded', function () {
     goToSlide(0);
     startTimer();
   }
+
+  window.initHeroServiceSlideshow = setupHeroSlideshow;
+  setupHeroSlideshow();
 
   // 9. Single-Question FAQ Carousel Controller
   const faqSingleCard = document.getElementById('faqSingleCard');
@@ -574,101 +589,6 @@ document.addEventListener('DOMContentLoaded', function () {
     animCards.forEach(card => card.classList.add('revealed'));
   }
 
-  // 11. Hero Service Showcase Slideshow (Autoplay, Controls, Hover/Touch Pause)
-  const heroSlideshowWrap = document.querySelector('.hero-slideshow-wrap');
-  const heroSlides = document.querySelectorAll('.hero-service-slide');
-  const heroDots = document.querySelectorAll('.slideshow-dot');
-  const prevSlideBtn = document.querySelector('.slideshow-arrow.prev');
-  const nextSlideBtn = document.querySelector('.slideshow-arrow.next');
-
-  if (heroSlides.length > 0) {
-    let currentSlideIndex = 0;
-    let slideTimer = null;
-    const slideDuration = 3500; // 3.5s per service
-
-    function goToSlide(index) {
-      if (index < 0) index = heroSlides.length - 1;
-      if (index >= heroSlides.length) index = 0;
-
-      heroSlides.forEach((slide, i) => {
-        if (i === index) {
-          slide.classList.add('active');
-        } else {
-          slide.classList.remove('active');
-        }
-      });
-
-      heroDots.forEach((dot, i) => {
-        if (i === index) {
-          dot.classList.add('active');
-          dot.setAttribute('aria-selected', 'true');
-        } else {
-          dot.classList.remove('active');
-          dot.setAttribute('aria-selected', 'false');
-        }
-      });
-
-      currentSlideIndex = index;
-    }
-
-    function nextSlide() {
-      goToSlide(currentSlideIndex + 1);
-    }
-
-    function prevSlide() {
-      goToSlide(currentSlideIndex - 1);
-    }
-
-    function startAutoSlide() {
-      stopAutoSlide();
-      slideTimer = setInterval(nextSlide, slideDuration);
-    }
-
-    function stopAutoSlide() {
-      if (slideTimer) {
-        clearInterval(slideTimer);
-        slideTimer = null;
-      }
-    }
-
-    // Dot click triggers
-    heroDots.forEach((dot, idx) => {
-      dot.addEventListener('click', (e) => {
-        e.preventDefault();
-        goToSlide(idx);
-        startAutoSlide();
-      });
-    });
-
-    // Arrow button triggers
-    if (nextSlideBtn) {
-      nextSlideBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        nextSlide();
-        startAutoSlide();
-      });
-    }
-
-    if (prevSlideBtn) {
-      prevSlideBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        prevSlide();
-        startAutoSlide();
-      });
-    }
-
-    // Hover & touch pause/resume
-    if (heroSlideshowWrap) {
-      heroSlideshowWrap.addEventListener('mouseenter', stopAutoSlide);
-      heroSlideshowWrap.addEventListener('mouseleave', startAutoSlide);
-      heroSlideshowWrap.addEventListener('touchstart', stopAutoSlide, { passive: true });
-      heroSlideshowWrap.addEventListener('touchend', startAutoSlide, { passive: true });
-    }
-
-    // Initialize first slide and start rotation
-    goToSlide(0);
-    startAutoSlide();
-  }
 
   // 12. Results Section - Number Counter Animation on Scroll
   const counterElements = document.querySelectorAll('.counter-number');
@@ -714,4 +634,11 @@ document.addEventListener('DOMContentLoaded', function () {
     accentLines.forEach(line => line.classList.add('in-view'));
     animCards.forEach(card => card.classList.add('revealed'));
   }, 1500);
-});
+}
+
+// Ensure execution even if DOMContentLoaded has already fired
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initPremiumAgency);
+} else {
+  initPremiumAgency();
+}

@@ -151,149 +151,148 @@ $(window).scroll(function() {
     console.log(by_top);
 });
 
-// Gsap Link
+// Gsap Link (guarded against missing library)
+if (typeof gsap !== 'undefined') {
+    const randomX = random(1, 10);
+    const randomY = random(1, 10);
+    const randomDelay = random(0, 1);
+    const randomTime = random(1, 3);
+    const randomTime2 = random(3, 5);
+    const randomAngle = random(-10, 10);
 
-console.clear();
+    const cans = gsap.utils.toArray(".multi_img > img");
+    cans.forEach((can) => {
+        gsap.set(can, {
+            x: randomX(-1),
+            y: randomX(1),
+            rotation: randomAngle(-1),
+        });
 
-const randomX = random(1, 10);
-const randomY = random(1, 10);
-const randomDelay = random(0, 1);
-const randomTime = random(1, 3);
-const randomTime2 = random(3, 5);
-const randomAngle = random(-10, 10);
-
-const cans = gsap.utils.toArray(".multi_img > img");
-cans.forEach((can) => {
-    gsap.set(can, {
-        x: randomX(-1),
-        y: randomX(1),
-        rotation: randomAngle(-1),
+        moveX(can, 1);
+        moveY(can, -1);
+        rotate(can, 1);
     });
 
-    moveX(can, 1);
-    moveY(can, -1);
-    rotate(can, 1);
-});
-
-function rotate(target, direction) {
-    gsap.to(target, randomTime2(), {
-        rotation: randomAngle(direction),
-        // delay: randomDelay(),
-        ease: Sine.easeInOut,
-        onComplete: rotate,
-        onCompleteParams: [target, direction * -1],
-    });
-}
-
-function moveX(target, direction) {
-    gsap.to(target, randomTime(), {
-        x: randomX(direction),
-        ease: Sine.easeInOut,
-        onComplete: moveX,
-        onCompleteParams: [target, direction * -1],
-    });
-}
-
-function moveY(target, direction) {
-    gsap.to(target, randomTime(), {
-        y: randomY(direction),
-        ease: Sine.easeInOut,
-        onComplete: moveY,
-        onCompleteParams: [target, direction * -1],
-    });
-}
-
-function random(min, max) {
-    const delta = max - min;
-    return (direction = 1) => (min + delta * Math.random()) * direction;
-}
-
-// Case Study UX
-
-gsap.registerPlugin(ScrollTrigger);
-
-const tl = gsap.timeline({
-    defaults: {
-        duration: 1,
-        ease: "none"
-    },
-    scrollTrigger: {
-        trigger: ".discovery",
-        start: "top -50%",
-        end: "+=200%",
-        scrub: true,
-        nullTargetWarn: false,
-        // pin: true,
-        // markers: true,
-    },
-});
-
-tl.to(".ux_strategy .container .dot", {
-    scale: 100
-}).set(
-    ".ux_strategy .container", {
-        autoAlpha: 0
+    function rotate(target, direction) {
+        gsap.to(target, randomTime2(), {
+            rotation: randomAngle(direction),
+            ease: Sine.easeInOut,
+            onComplete: rotate,
+            onCompleteParams: [target, direction * -1],
+        });
     }
-);
 
-gsap.set(".ux_strategy .container", {
-    zIndex: (i, target, targets) => targets.length - i,
-});
+    function moveX(target, direction) {
+        gsap.to(target, randomTime(), {
+            x: randomX(direction),
+            ease: Sine.easeInOut,
+            onComplete: moveX,
+            onCompleteParams: [target, direction * -1],
+        });
+    }
+
+    function moveY(target, direction) {
+        gsap.to(target, randomTime(), {
+            y: randomY(direction),
+            ease: Sine.easeInOut,
+            onComplete: moveY,
+            onCompleteParams: [target, direction * -1],
+        });
+    }
+
+    function random(min, max) {
+        const delta = max - min;
+        return (direction = 1) => (min + delta * Math.random()) * direction;
+    }
+
+    // Case Study UX
+    if (typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const tl = gsap.timeline({
+            defaults: {
+                duration: 1,
+                ease: "none"
+            },
+            scrollTrigger: {
+                trigger: ".discovery",
+                start: "top -50%",
+                end: "+=200%",
+                scrub: true,
+                nullTargetWarn: false,
+            },
+        });
+
+        tl.to(".ux_strategy .container .dot", {
+            scale: 100
+        }).set(
+            ".ux_strategy .container", {
+                autoAlpha: 0
+            }
+        );
+
+        gsap.set(".ux_strategy .container", {
+            zIndex: (i, target, targets) => targets.length - i,
+        });
+
+        const tm = gsap.timeline({
+            defaults: {
+                duration: 2,
+                ease: "none"
+            },
+            scrollTrigger: {
+                trigger: ".our_client_say",
+                start: "top 5%",
+                end: "+=120%",
+                scrub: true,
+            },
+        });
+
+        tm.to(".ani_what_we .square", {
+            scaleY: 130
+        }).set(".ani_what_we", {
+            autoAlpha: 0,
+        });
+
+        gsap.set(".ani_what_we", {
+            zIndex: (i, target, targets) => targets.length - i,
+        });
+    }
+}
 
 // AOS
-
-AOS.init();
+if (typeof AOS !== 'undefined') {
+    AOS.init();
+}
 
 // Home Our Process
-
 $(window).scroll(function() {
-    var process = $(".process1").offset().top - window.innerHeight;
-    if ($(window).scrollTop() > process) {
-        $(".process1").addClass("start");
-    } else {
-        $(".process1").removeClass("start");
+    if ($(".process1").length && $(".process1").offset()) {
+        var process = $(".process1").offset().top - window.innerHeight;
+        if ($(window).scrollTop() > process) {
+            $(".process1").addClass("start");
+        } else {
+            $(".process1").removeClass("start");
+        }
     }
 
-    var process2 = $(".process2").offset().top - window.innerHeight;
-    if ($(window).scrollTop() > process2) {
-        $(".process2").addClass("start");
-    } else {
-        $(".process2").removeClass("start");
+    if ($(".process2").length && $(".process2").offset()) {
+        var process2 = $(".process2").offset().top - window.innerHeight;
+        if ($(window).scrollTop() > process2) {
+            $(".process2").addClass("start");
+        } else {
+            $(".process2").removeClass("start");
+        }
     }
 
-    var process3 = $(".process3").offset().top - window.innerHeight;
-    if ($(window).scrollTop() > process3) {
-        $(".process3").addClass("start");
-    } else {
-        $(".process3").removeClass("start");
+    if ($(".process3").length && $(".process3").offset()) {
+        var process3 = $(".process3").offset().top - window.innerHeight;
+        if ($(window).scrollTop() > process3) {
+            $(".process3").addClass("start");
+        } else {
+            $(".process3").removeClass("start");
+        }
     }
-});
-
-// Case Study UX
-
-const tm = gsap.timeline({
-    defaults: {
-        duration: 2,
-        ease: "none"
-    },
-    scrollTrigger: {
-        trigger: ".our_client_say",
-        start: "top 5%",
-        end: "+=120%",
-        scrub: true,
-        // pin: true,
-        // markers: true,
-    },
-});
-
-tm.to(".ani_what_we .square", {
-    scaleY: 130
-}).set(".ani_what_we", {
-    autoAlpha: 0,
-});
-
-gsap.set(".ani_what_we", {
-    zIndex: (i, target, targets) => targets.length - i,
 });
 
 // Form

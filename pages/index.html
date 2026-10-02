@@ -283,7 +283,7 @@
                             <!-- Slide 1: Website Development -->
                             <div class="hero-service-slide active" data-slide="1">
                                 <div class="slide-visual-box">
-                                    <img src="../assets/images/services/new/website_solutions.jpg" alt="Website Development" class="slide-main-img">
+                                    <img src="../assets/images/services/new/website_luxury.jpg" alt="Website Development" class="slide-main-img">
                                     <div class="slide-glass-sheen"></div>
                                     <div class="slide-dark-gradient"></div>
                                 </div>
@@ -332,8 +332,8 @@
 
                             <!-- Slide 3: Mobile App Development -->
                             <div class="hero-service-slide" data-slide="3">
-                                <div class="slide-visual-box mobile-app-box">
-                                    <img src="../assets/images/services/mob_app/app_img1.png" alt="Mobile App Development" class="slide-main-img slide-phone-img">
+                                <div class="slide-visual-box">
+                                    <img src="../assets/images/services/new/mobile_app_luxury.jpg" alt="Mobile App Development" class="slide-main-img">
                                     <div class="slide-glass-sheen"></div>
                                     <div class="slide-dark-gradient"></div>
                                 </div>
@@ -358,7 +358,7 @@
                             <!-- Slide 4: Software Development & CRM -->
                             <div class="hero-service-slide" data-slide="4">
                                 <div class="slide-visual-box">
-                                    <img src="../assets/images/services/new/business_automation.jpg" alt="Software Development & CRM" class="slide-main-img">
+                                    <img src="../assets/images/services/new/crm_luxury.jpg" alt="Software Development & CRM" class="slide-main-img">
                                     <div class="slide-glass-sheen"></div>
                                     <div class="slide-dark-gradient"></div>
                                 </div>
@@ -1255,6 +1255,10 @@
     <script>
         const yearEl = document.getElementById('currentYear');
         if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+        if (window.initHeroServiceSlideshow) {
+            window.initHeroServiceSlideshow();
+        }
 
         AOS.init({
             duration: 800,
