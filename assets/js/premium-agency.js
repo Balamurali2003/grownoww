@@ -94,6 +94,23 @@ document.addEventListener('DOMContentLoaded', function () {
           return; // Let standard anchor scroll work on contact page
         }
         e.preventDefault();
+
+        // If button has data-service, prefill modal
+        const serviceName = btn.getAttribute('data-service');
+        const modalServiceInput = document.getElementById('hidden_service_popup');
+        const modalServiceSelect = document.getElementById('modalServiceSelect');
+        if (serviceName) {
+          if (modalServiceInput) modalServiceInput.value = serviceName;
+          if (modalServiceSelect) {
+            for (let i = 0; i < modalServiceSelect.options.length; i++) {
+              if (modalServiceSelect.options[i].value === serviceName) {
+                modalServiceSelect.selectedIndex = i;
+                break;
+              }
+            }
+          }
+        }
+
         modal.classList.add('visibleall');
         document.body.style.overflow = 'hidden';
       });
@@ -533,23 +550,31 @@ document.addEventListener('DOMContentLoaded', function () {
     accentLines.forEach(line => line.classList.add('in-view'));
   }
 
-  // Staggered reveal for cards (0ms, 100ms, 200ms, 300ms)
-  const animCards = document.querySelectorAll('.result-box, .timeline-card, .process-step-node, .featured-project-card');
+  // Staggered reveal for cards & services
+  const animCards = document.querySelectorAll(
+    '.result-box, .timeline-card, .process-step-node, .featured-project-card, ' +
+    '.service-compact-card, .benefit-compact-card, .result-compact-box, .who-point-card, .tech-luxury-pill'
+  );
   if (animCards.length && 'IntersectionObserver' in window) {
     const cardObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const parent = entry.target.parentElement;
-          const siblings = parent ? Array.from(parent.children) : [];
-          const idx = siblings.indexOf(entry.target.closest('.col-md-6, .col-lg-3, .col-lg-4, .col-sm-6') || entry.target);
-          const delay = (idx >= 0 ? idx % 4 : 0) * 100;
+          const el = entry.target;
+          const parent = el.closest('.row, .who-we-are-compact-grid, .tech-pills-wrap');
+          const allItems = parent ? Array.from(parent.querySelectorAll('.service-compact-card, .benefit-compact-card, .result-compact-box, .who-point-card, .tech-luxury-pill, .result-box, .timeline-card, .process-step-node, .featured-project-card')) : [];
+          const idx = allItems.indexOf(el);
+          
+          // Use 80ms stagger for 9-service grid, 100ms for benefits and results
+          const stepMs = el.classList.contains('service-compact-card') ? 80 : 100;
+          const delay = (idx >= 0 ? idx : 0) * stepMs;
+          
           setTimeout(() => {
-            entry.target.classList.add('revealed');
+            el.classList.add('revealed');
           }, delay);
-          observer.unobserve(entry.target);
+          observer.unobserve(el);
         }
       });
-    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -25px 0px' });
 
     animCards.forEach(card => cardObserver.observe(card));
   } else {
