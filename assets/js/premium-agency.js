@@ -275,154 +275,147 @@ document.addEventListener('DOMContentLoaded', function () {
     startAutoPlay();
   }
 
-  // 8. Hero Right-Side Services Showcase Controller (Automatic + Interactive)
-  const heroShowcase = document.getElementById('heroShowcase');
-  if (heroShowcase) {
-    const items = heroShowcase.querySelectorAll('.hero-showcase-item');
-    const totalItems = items.length;
-    const currEl = document.getElementById('heroSvcCurr');
-    const totalEl = document.getElementById('heroSvcTotal');
-    const catEl = document.getElementById('heroSvcCategory');
-    const prevBtn = document.getElementById('heroShowcasePrev');
-    const nextBtn = document.getElementById('heroShowcaseNext');
-    const dots = heroShowcase.querySelectorAll('.hero-dot');
-    const progressBar = document.getElementById('heroShowcaseProgressBar');
+  // 8. Hero 9-Service Showcase Slideshow (Automatic 3.2s Rotation + Interactive Controls)
+  const heroSlideshow = document.getElementById('heroServiceSlideshow');
+  if (heroSlideshow) {
+    const slides = heroSlideshow.querySelectorAll('.hero-service-slide');
+    const dots = heroSlideshow.querySelectorAll('.slideshow-dot');
+    const prevBtn = document.getElementById('heroSlidePrev');
+    const nextBtn = document.getElementById('heroSlideNext');
+    const totalSlides = slides.length;
 
-    let currentHeroIndex = 0;
-    let heroTimer = null;
+    let currentIndex = 0;
+    let slideTimer = null;
 
-    if (totalEl) {
-      totalEl.textContent = String(totalItems).padStart(2, '0');
-    }
+    function goToSlide(index) {
+      if (totalSlides === 0) return;
+      const targetIndex = ((index % totalSlides) + totalSlides) % totalSlides;
 
-    function updateHeroControls(idx) {
-      if (currEl) {
-        currEl.textContent = String(idx + 1).padStart(2, '0');
-      }
-      if (catEl && items[idx]) {
-        catEl.textContent = items[idx].getAttribute('data-service-cat') || 'Service';
-      }
-      if (progressBar) {
-        progressBar.style.width = (((idx + 1) / totalItems) * 100) + '%';
-      }
-      dots.forEach((dot, dIdx) => {
-        if (dIdx === idx) {
+      // Update active slide class
+      slides.forEach((slide, i) => {
+        if (i === targetIndex) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+
+      // Update active dot class
+      dots.forEach((dot, i) => {
+        if (i === targetIndex) {
           dot.classList.add('active');
+          dot.setAttribute('aria-selected', 'true');
         } else {
           dot.classList.remove('active');
+          dot.setAttribute('aria-selected', 'false');
         }
+      });
+
+      currentIndex = targetIndex;
+    }
+
+    function nextSlide() {
+      goToSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentIndex - 1);
+    }
+
+    function startTimer() {
+      stopTimer();
+      slideTimer = setInterval(nextSlide, 3200);
+    }
+
+    function stopTimer() {
+      if (slideTimer) {
+        clearInterval(slideTimer);
+        slideTimer = null;
+      }
+    }
+
+    function resetTimer() {
+      stopTimer();
+      startTimer();
+    }
+
+    // Previous & Next Arrow Buttons
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        nextSlide();
+        resetTimer();
       });
     }
 
-    function showHeroService(newIndex) {
-      if (newIndex === currentHeroIndex) return;
-      const currentItem = items[currentHeroIndex];
-      const nextItem = items[newIndex];
-
-      currentItem.classList.remove('active', 'anim-fade-in');
-      currentItem.style.display = 'none';
-
-      nextItem.style.display = 'block';
-      nextItem.classList.add('active', 'anim-fade-in');
-
-      currentHeroIndex = newIndex;
-      updateHeroControls(currentHeroIndex);
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        prevSlide();
+        resetTimer();
+      });
     }
 
-    function nextHeroService() {
-      const nextIdx = (currentHeroIndex + 1) % totalItems;
-      showHeroService(nextIdx);
-    }
-
-    function prevHeroService() {
-      const prevIdx = (currentHeroIndex - 1 + totalItems) % totalItems;
-      showHeroService(prevIdx);
-    }
-
-    if (nextBtn) nextBtn.addEventListener('click', () => { nextHeroService(); resetHeroTimer(); });
-    if (prevBtn) prevBtn.addEventListener('click', () => { prevHeroService(); resetHeroTimer(); });
-
-    dots.forEach((dot, dIdx) => {
-      dot.addEventListener('click', () => {
-        showHeroService(dIdx);
-        resetHeroTimer();
+    // Dot indicators navigation
+    dots.forEach((dot) => {
+      dot.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetIndex = parseInt(this.getAttribute('data-index'), 10);
+        if (!isNaN(targetIndex)) {
+          goToSlide(targetIndex);
+          resetTimer();
+        }
       });
     });
 
-    function startHeroTimer() {
-      if (!heroTimer) {
-        heroTimer = setInterval(nextHeroService, 4500);
-      }
-    }
+    // Pause on mouse hover, resume on mouse leave
+    heroSlideshow.addEventListener('mouseenter', stopTimer);
+    heroSlideshow.addEventListener('mouseleave', startTimer);
 
-    function stopHeroTimer() {
-      if (heroTimer) {
-        clearInterval(heroTimer);
-        heroTimer = null;
-      }
-    }
-
-    function resetHeroTimer() {
-      stopHeroTimer();
-      startHeroTimer();
-    }
-
-    heroShowcase.addEventListener('mouseenter', stopHeroTimer);
-    heroShowcase.addEventListener('mouseleave', startHeroTimer);
-
-    // Touch swipe support
+    // Mobile touch gestures
     let touchStartX = 0;
     let touchEndX = 0;
-    heroShowcase.addEventListener('touchstart', (e) => {
+    heroSlideshow.addEventListener('touchstart', function (e) {
       touchStartX = e.changedTouches[0].screenX;
-      stopHeroTimer();
+      stopTimer();
     }, { passive: true });
 
-    heroShowcase.addEventListener('touchend', (e) => {
+    heroSlideshow.addEventListener('touchend', function (e) {
       touchEndX = e.changedTouches[0].screenX;
-      if (touchStartX - touchEndX > 40) {
-        nextHeroService();
-      } else if (touchEndX - touchStartX > 40) {
-        prevHeroService();
+      if (touchStartX - touchEndX > 45) {
+        nextSlide();
+      } else if (touchEndX - touchStartX > 45) {
+        prevSlide();
       }
-      startHeroTimer();
+      startTimer();
     }, { passive: true });
 
-    // Handle "BOOK THIS SERVICE" CTA clicks to prefill modal service dropdown
-    const bookButtons = heroShowcase.querySelectorAll('.hero-showcase-cta');
+    // Pause when page is hidden (e.g. background tab)
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        stopTimer();
+      } else {
+        startTimer();
+      }
+    });
+
+    // Handle "Explore" and "Details" button prefill
+    const exploreButtons = heroSlideshow.querySelectorAll('.slide-explore-btn');
     const modalServiceInput = document.getElementById('hidden_service_popup');
     const modalServiceSelect = document.getElementById('modalServiceSelect');
-
-    if (modalServiceSelect && modalServiceInput) {
-      modalServiceSelect.addEventListener('change', function () {
-        modalServiceInput.value = this.value;
-      });
-    }
-
-    bookButtons.forEach(btn => {
+    exploreButtons.forEach(btn => {
       btn.addEventListener('click', function () {
-        const serviceName = btn.getAttribute('data-service');
-        if (modalServiceInput && serviceName) {
-          modalServiceInput.value = serviceName;
-        }
-        if (modalServiceSelect && serviceName) {
-          let found = false;
-          for (let i = 0; i < modalServiceSelect.options.length; i++) {
-            if (modalServiceSelect.options[i].value === serviceName) {
-              modalServiceSelect.selectedIndex = i;
-              found = true;
-              break;
-            }
-          }
-          if (!found) {
-            modalServiceSelect.value = serviceName;
-          }
+        const slide = this.closest('.hero-service-slide');
+        const title = slide ? slide.querySelector('.slide-service-title') : null;
+        if (title && modalServiceInput) {
+          modalServiceInput.value = title.textContent.trim();
         }
       });
     });
 
-    updateHeroControls(0);
-    startHeroTimer();
+    // Start auto-rotation immediately
+    goToSlide(0);
+    startTimer();
   }
 
   // 9. Single-Question FAQ Carousel Controller
