@@ -553,7 +553,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Staggered reveal for cards & services
   const animCards = document.querySelectorAll(
     '.result-box, .timeline-card, .process-step-node, .featured-project-card, ' +
-    '.service-compact-card, .benefit-compact-card, .result-compact-box, .who-point-card, .tech-luxury-pill'
+    '.service-compact-card, .service-detailed-card, .benefit-compact-card, .result-compact-box, .who-point-card, .tech-luxury-pill'
   );
   if (animCards.length && 'IntersectionObserver' in window) {
     const cardObserver = new IntersectionObserver((entries, observer) => {
@@ -561,7 +561,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (entry.isIntersecting) {
           const el = entry.target;
           const parent = el.closest('.row, .who-we-are-compact-grid, .tech-pills-wrap');
-          const allItems = parent ? Array.from(parent.querySelectorAll('.service-compact-card, .benefit-compact-card, .result-compact-box, .who-point-card, .tech-luxury-pill, .result-box, .timeline-card, .process-step-node, .featured-project-card')) : [];
+          const allItems = parent ? Array.from(parent.querySelectorAll('.service-compact-card, .service-detailed-card, .benefit-compact-card, .result-compact-box, .who-point-card, .tech-luxury-pill, .result-box, .timeline-card, .process-step-node, .featured-project-card')) : [];
           const idx = allItems.indexOf(el);
           
           // Use 80ms stagger for 9-service grid, 100ms for benefits and results
@@ -579,6 +579,141 @@ document.addEventListener('DOMContentLoaded', function () {
     animCards.forEach(card => cardObserver.observe(card));
   } else {
     animCards.forEach(card => card.classList.add('revealed'));
+  }
+
+  // 11. Hero Service Showcase Slideshow (Autoplay, Controls, Hover/Touch Pause)
+  const heroSlideshowWrap = document.querySelector('.hero-slideshow-wrap');
+  const heroSlides = document.querySelectorAll('.hero-service-slide');
+  const heroDots = document.querySelectorAll('.slideshow-dot');
+  const prevSlideBtn = document.querySelector('.slideshow-arrow.prev');
+  const nextSlideBtn = document.querySelector('.slideshow-arrow.next');
+
+  if (heroSlides.length > 0) {
+    let currentSlideIndex = 0;
+    let slideTimer = null;
+    const slideDuration = 3500; // 3.5s per service
+
+    function goToSlide(index) {
+      if (index < 0) index = heroSlides.length - 1;
+      if (index >= heroSlides.length) index = 0;
+
+      heroSlides.forEach((slide, i) => {
+        if (i === index) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+
+      heroDots.forEach((dot, i) => {
+        if (i === index) {
+          dot.classList.add('active');
+          dot.setAttribute('aria-selected', 'true');
+        } else {
+          dot.classList.remove('active');
+          dot.setAttribute('aria-selected', 'false');
+        }
+      });
+
+      currentSlideIndex = index;
+    }
+
+    function nextSlide() {
+      goToSlide(currentSlideIndex + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentSlideIndex - 1);
+    }
+
+    function startAutoSlide() {
+      stopAutoSlide();
+      slideTimer = setInterval(nextSlide, slideDuration);
+    }
+
+    function stopAutoSlide() {
+      if (slideTimer) {
+        clearInterval(slideTimer);
+        slideTimer = null;
+      }
+    }
+
+    // Dot click triggers
+    heroDots.forEach((dot, idx) => {
+      dot.addEventListener('click', (e) => {
+        e.preventDefault();
+        goToSlide(idx);
+        startAutoSlide();
+      });
+    });
+
+    // Arrow button triggers
+    if (nextSlideBtn) {
+      nextSlideBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        nextSlide();
+        startAutoSlide();
+      });
+    }
+
+    if (prevSlideBtn) {
+      prevSlideBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        prevSlide();
+        startAutoSlide();
+      });
+    }
+
+    // Hover & touch pause/resume
+    if (heroSlideshowWrap) {
+      heroSlideshowWrap.addEventListener('mouseenter', stopAutoSlide);
+      heroSlideshowWrap.addEventListener('mouseleave', startAutoSlide);
+      heroSlideshowWrap.addEventListener('touchstart', stopAutoSlide, { passive: true });
+      heroSlideshowWrap.addEventListener('touchend', startAutoSlide, { passive: true });
+    }
+
+    // Initialize first slide and start rotation
+    goToSlide(0);
+    startAutoSlide();
+  }
+
+  // 12. Results Section - Number Counter Animation on Scroll
+  const counterElements = document.querySelectorAll('.counter-number');
+  if (counterElements.length && 'IntersectionObserver' in window) {
+    const countObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseFloat(el.getAttribute('data-target') || '0');
+          const prefix = el.getAttribute('data-prefix') || '';
+          const suffix = el.getAttribute('data-suffix') || '';
+          const isDecimal = target % 1 !== 0;
+          const duration = 1500; // 1.5s ease-out count
+          const startTime = performance.now();
+
+          function updateCounter(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // Ease-out cubic curve
+            const ease = 1 - Math.pow(1 - progress, 3);
+            const current = ease * target;
+
+            el.textContent = prefix + (isDecimal ? current.toFixed(1) : Math.round(current)) + suffix;
+
+            if (progress < 1) {
+              requestAnimationFrame(updateCounter);
+            } else {
+              el.textContent = prefix + (isDecimal ? target.toFixed(1) : target) + suffix;
+            }
+          }
+
+          requestAnimationFrame(updateCounter);
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.25 });
+
+    counterElements.forEach(el => countObserver.observe(el));
   }
 
   // Safety fallback after 1.5s
